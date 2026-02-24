@@ -1,0 +1,45 @@
+1.Date and Time Functions
+
+2.TODAY
+
+3.NOW
+
+4.DATEDIF
+
+5.FILTER function for returning multiple matching values
+
+6.Conditional Formatting
+
+7.Arrows
+
+8.Timestamp creation using NOW function and iterative calculations
+
+9.What-If Analysis
+
+10.Scenario Manager
+
+11.Linear Regression using Data Analysis Toolpak
+
+12.Data Analysis and storytelling based on the dataset
+
+13.GroupBy concept using formulas to identify High-Value Customers
+
+.Dashboard Creation including:
+
+14.Pivot Tables
+
+15.Pivot Charts (Bar, Line, Pie)
+
+16.Slicers
+
+17.Timelines
+
+18.KPI Indicators using Conditional Formatting
+
+19.Finding the most frequently purchased product or repeating names using formulas
+
+20.Comparing two lists and extracting matching names into a new column
+
+21.Creating abbreviations using TEXT functions
+
+22.Final report preparation with insights and storytelling
