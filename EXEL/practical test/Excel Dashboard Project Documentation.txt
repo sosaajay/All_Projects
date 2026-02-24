@@ -1,0 +1,61 @@
+Project File Name: Ajay_ExcelDashboard.xlsx
+
+Project Objective:
+To analyze sales data using Excel tools including data cleaning, pivot tables, advanced formulas, visualizations, and an interactive dashboard.
+
+STEPS PERFORMED:
+
+Dataset Selection & Import
+
+Imported sales dataset into Excel.
+
+Data Cleaning & Preparation
+
+Removed duplicate records.
+
+Handled missing values where applicable.
+
+Formatted date, numeric, and text columns properly.
+
+Created additional calculated columns (Year, Month, etc.).
+
+Pivot Table Creation
+
+Monthly Sales Analysis
+
+Yearly Sales Analysis
+
+Regional Sales Analysis
+
+Profit Analysis
+
+IF Function
+
+Nested IF Function
+
+VLOOKUP
+
+Total Sales Calculations
+
+Profit/Loss Classification
+
+Data Visualization
+
+Column Charts
+
+Line Charts
+
+Interactive Dashboard
+
+Pivot-connected charts
+
+SHEETS INCLUDED IN PROJECT:
+
+Database
+Raw dataset used for analysis.
+
+Pivot Table
+Contains all pivot-based summaries and analysis tables.
+
+Dashboard
+Interactive visual summary of the analysis.
