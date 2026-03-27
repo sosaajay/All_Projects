@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rusty Spoon | Cafe & Bistro</title>
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-color: #d35400; /* Burnt Orange */
+            --secondary-color: #2c3e50; /* Dark Blue/Grey */
+            --bg-color: #fdfbf7; /* Cream */
+            --text-color: #333;
+            --light-text: #fff;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- HEADER & NAV --- */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-reserve {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+
+        .btn-reserve:hover {
+            background-color: #a04000;
+        }
+
+        /* Mobile Menu Button (Hidden on Desktop) */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text);
+            padding: 0 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- SECTIONS GENERAL --- */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+        }
+
+        /* --- MENU SECTION --- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .menu-details {
+            padding: 1.5rem;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .price {
+            color: var(--primary-color);
+        }
+
+        .description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80') center/cover;
+            border-radius: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">The Rusty Spoon</div>
+            <div class="menu-toggle" id="mobile-menu">
+                ☰
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#book" class="btn-reserve">Book a Table</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Taste the Difference</h1>
+            <p>Experience locally sourced ingredients, artisanal coffee, and a cozy atmosphere in the heart of the city.</p>
+            <button class="btn-hero" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">View Our Menu</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">Our Story</h2>
+        <div class="about-container">
+            <div class="about-image"></div>
+            <div class="about-text">
+                <h3>Founded in 2015</h3>
+                <p>The Rusty Spoon began with a simple mission: to serve honest food in a warm environment. We believe that good food brings people together.</p>
+                <br>
+                <p>Our chefs work directly with local farmers to ensure that every plate is fresh, sustainable, and bursting with flavor. Whether you are here for a quick coffee or a long dinner, we promise an unforgettable experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2 class="section-title">Popular Dishes</h2>
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <div class="menu-item">
+                <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="menu-details">
+                    <div class="menu-header">
+                        <span>Artisan Pizza</span>
+                        <span class="price">$18</span>
+                    </div>
+                    <p class="description">Wood-fired dough, fresh basil, mozzarella di bufala, and San Marzano tomato sauce.</p>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="menu-item">
+                <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="menu-details">
+                    <div class="menu-header">
+                        <span>Avocado Toast</span>
+                        <span class="price">$12</span>
+                    </div>
+                    <p class="description">Sourdough bread, smashed avocado, poached egg, chili flakes, and microgreens.</p>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="menu-item">
+                <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="menu-details">
+                    <div class="menu-header">
+                        <span>Signature Cocktail</span>
+                        <span class="price">$14</span>
+                    </div>
+                    <p class="description">Our house special gin fizz with elderflower liqueur, lemon juice, and egg white.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>The Rusty Spoon</h3>
+                <p>123 Culinary Avenue<br>Food District, NY 10012</p>
+            </div>
+            <div class="footer-col">
+                <h3>Opening Hours</h3>
+                <p>Mon - Fri: 8am - 10pm</p>
+                <p>Sat - Sun: 9am - 11pm</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: hello@rustyspoon.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 The Rusty Spoon. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- BOOKING FORM SECTION -->
+<section id="book" style="background-color: #f8f5f2; padding: 5rem 2rem;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 class="section-title">Book a Table</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center;">
+            <!-- Booking Form -->
+            <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); flex: 1; min-width: 350px;">
+                <form id="bookingForm">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name</label>
+                        <input type="text" id="name" required 
+                               style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;"
+                               placeholder="Enter your name">
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone Number</label>
+                        <input type="tel" id="phone" required 
+                               style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;"
+                               placeholder="Enter your phone number">
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address</label>
+                        <input type="email" id="email" required 
+                               style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;"
+                               placeholder="Enter your email">
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="flex: 1;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Date</label>
+                            <input type="date" id="date" required 
+                                   style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Time</label>
+                            <input type="time" id="time" required 
+                                   style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Number of Guests</label>
+                        <select id="guests" required 
+                                style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="">Select guests</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6 People</option>
+                            <option value="7">7 People</option>
+                            <option value="8">8+ People</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Special Requests</label>
+                        <textarea id="requests" rows="3" 
+                                  style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;"
+                                  placeholder="Any special requests or dietary requirements?"></textarea>
+                    </div>
+
+                    <button type="submit" 
+                            style="width: 100%; background-color: var(--primary-color); color: white; padding: 1rem; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; transition: background 0.3s;">
+                        Confirm Booking
+                    </button>
+                </form>
+            </div>
+
+            <!-- Booking Info -->
+            <div style="flex: 1; min-width: 350px; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--secondary-color);">Reservation Details</h3>
+                
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📞 Contact for Large Groups</h4>
+                    <p>For parties of 8 or more, please call us directly at <strong>(555) 123-4567</strong></p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">⏰ Cancellation Policy</h4>
+                    <p>Please cancel at least 24 hours in advance. Late cancellations may incur a fee.</p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🎉 Special Occasions</h4>
+                    <p>Let us know if you're celebrating! We offer special arrangements for birthdays, anniversaries, and more.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Modal -->
+<div id="bookingModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 2rem; border-radius: 10px; max-width: 500px; width: 90%; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+        <h2 style="color: var(--secondary-color); margin-bottom: 1rem;">Booking Confirmed!</h2>
+        <p style="margin-bottom: 1.5rem;">Thank you for your reservation. We have sent a confirmation email to your address.</p>
+        <div style="background: #f8f5f2; padding: 1rem; border-radius: 5px; margin-bottom: 1.5rem; text-align: left;">
+            <p><strong>Booking Reference:</strong> <span id="bookingRef"></span></p>
+            <p><strong>Date:</strong> <span id="bookingDate"></span></p>
+            <p><strong>Time:</strong> <span id="bookingTime"></span></p>
+            <p><strong>Guests:</strong> <span id="bookingGuests"></span></p>
+        </div>
+        <button onclick="closeModal()" 
+                style="background-color: var(--primary-color); color: white; padding: 0.8rem 2rem; border: none; border-radius: 5px; cursor: pointer;">
+            Close
+        </button>
+    </div>
+</div>

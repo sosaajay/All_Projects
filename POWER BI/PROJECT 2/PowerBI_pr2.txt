@@ -1,0 +1,104 @@
+Power BI Project Guide
+
+Step 1: Import Excel Files
+
+Open Power BI Desktop
+Go to Home → Get Data → Excel
+Import these files:
+SalesFact.xlsx
+CustomerDim.xlsx
+ProductDim.xlsx
+RegionDim.xlsx
+DateDim.xlsx
+ReturnsFact.xlsx
+Click Transform Data to open Power Query
+
+Step 2: Data Cleaning
+
+Remove blank rows: Home → Remove Rows → Remove Blank Rows
+Set data types:
+IDs → Whole Number
+Quantity → Whole Number
+Revenue → Currency
+Discount → Decimal Number
+Date → Date
+Month → Text
+Year → Whole Number
+After cleaning all tables, click Close & Apply
+
+Step 3: Create Relationships
+
+SalesFact.CustomerID → CustomerDim.CustomerID (Many to One)
+SalesFact.ProductID → ProductDim.ProductID (Many to One)
+SalesFact.RegionID → RegionDim.RegionID (Many to One)
+SalesFact.DateKey → DateDim.DateKey (Many to One)
+ReturnsFact.SalesID → SalesFact.SalesID (Many to One)
+ReturnsFact.ReturnDateKey → DateDim.DateKey (Inactive)
+
+Cross Filter Direction = Single
+Avoid bidirectional filters unless necessary
+
+Step 4: Star Schema
+
+Central Fact Table: SalesFact
+Connected Dimensions: CustomerDim, ProductDim, RegionDim, DateDim, ReturnsFact
+
+Step 5: Cardinality
+
+1 : Many → key appears once in one table, multiple times in another
+Example: CustomerDim → SalesFact
+
+Many : 1 → key appears once in target table, multiple times in source
+Example: SalesFact → ProductDim
+
+1 : 1 → key appears only once in both tables
+Example: SalesFact → ReturnsFact
+
+Step 6: Advanced Model Settings
+
+Cross Filter Direction → Single
+Avoid bidirectional filters unless needed
+
+Step 7: Data Formatting
+
+Revenue → Currency
+Quantity → Whole Number
+Discount → Percentage
+Date → Date
+
+Step 8: Data Categories
+
+City → City
+State → State
+Country → Country
+ProductName → Product
+
+Step 9: Hierarchies
+
+Date Hierarchy: Year → Quarter → Month → Date
+Region Hierarchy: Country → State → City
+Product Hierarchy: Category → Subcategory → ProductName
+
+Step 10: Verification (Matrix Visuals)
+
+Sales by Product Category & Region
+Rows: ProductDim[Category]
+Columns: RegionDim[Country]
+Values: SUM(SalesFact[Revenue])
+
+Return Reasons by Fiscal Year
+Rows: ReturnsFact[Reason]
+Columns: DateDim[Fiscal Year]
+Values: COUNT(ReturnsFact[ReturnID])
+
+Revenue by Customer Segment
+Rows: CustomerDim[Segment]
+Values: SUM(SalesFact[Revenue])
+
+Step 11: Final Requirements
+
+Cleaned data in Power Query
+Star Schema Data Model
+Correct Relationships (including inactive)
+Hierarchies
+Matrix Table Verification
