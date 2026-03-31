@@ -1,92 +1,97 @@
-# 📊 Sales Data Analysis Project (Power BI)
+Sales Data Analysis Project 
+Project Overview
 
-## 📌 Project Overview
-This project is based on sales data analysis using Power BI, where I worked on multiple tables and created a complete data model for analysis.
+In this project, I worked on sales data analysis using Power BI. I used multiple datasets and built a complete data model to perform analysis and understand business performance clearly.
 
----
+Data Import
 
-## 📂 Data Import
 I imported the following datasets into Power BI:
-- Sales_Fact  
-- Returns_Fact  
-- Customer_Dim  
-- Product_Dim  
-- Date_Dim  
-- Region_Dim  
 
----
+Sales_Fact
+Returns_Fact
+Customer_Dim
+Product_Dim
+Date_Dim
+Region_Dim
 
-## 🔗 Data Modeling
-- Created relationships between fact and dimension tables  
-- Ensured proper connections for accurate analysis across:
-  - Customer  
-  - Product  
-  - Region  
-  - Date  
+These datasets were used to build the overall data model for analysis.
 
----
+Data Modeling
 
-## 🧮 Calculated Columns
-- **Profit** = SalesAmount - Cost  
-- **Return Flag** → Identify returned products  
-- **Customer Full Name** → First Name + Last Name  
+I created relationships between fact tables and dimension tables to connect the data properly.
+I made sure that all tables were correctly linked so that the analysis would give accurate results.
 
----
+Using this model, I was able to analyze data based on:
 
-## 📐 DAX Measures
-- Total Sales → `SUM`  
-- Total Cost  
-- Total Profit → Sales - Cost  
-- Return Rate → `DIVIDE`  
-- Average Sale  
+Customer
+Product
+Region
+Date
+Calculated Columns
 
-✔ Created a **Measure Table** to organize all DAX measures.
+I created the following calculated columns in the model:
 
----
+Profit = SalesAmount - Cost
+Return Flag → used to identify whether a product was returned
+Customer Full Name → created by combining First Name and Last Name
+DAX Measures
 
-## 🎯 Filter Context & Functions
-Used key DAX functions:
-- `CALCULATE` → Modify filter context  
-- `ALL` → Remove filters  
-- `FILTER` → Apply custom conditions  
+I created multiple DAX measures to perform calculations:
 
----
+Total Sales using SUM
+Total Cost
+Total Profit calculated as Sales - Cost
+Return Rate using DIVIDE
+Average Sale
 
-## 🧩 Other DAX Functions Used
-- Aggregations: `SUM`, `AVERAGE`, `MAX`  
-- Logic: `IF`, `SWITCH`  
-- Counting: `DISTINCTCOUNT`  
-- Text: `CONCATENATE`  
-- Date: `YEAR`, `MONTH`  
+To manage all these measures properly, I created a separate Measure Table.
 
----
+Filter Context and Functions
 
-## ⏳ Time Intelligence
-- Year-to-Date → `TOTALYTD`  
-- Previous Year Comparison → `SAMEPERIODLASTYEAR`  
-- Running Total → `CALCULATE` + `DATESBETWEEN`  
+I used important DAX functions to control filter context:
 
----
+CALCULATE → used to modify the filter context
+ALL → used to remove filters from the data
+FILTER → used to apply custom filtering conditions
 
-## 📊 Visualization (Matrix)
-Created a **Matrix visual** to analyze data based on:
-- Region  
-- Product Category  
-- Customer Segment  
-- Year & Month  
+These functions helped in creating dynamic and flexible calculations.
 
-✔ Helps compare performance like a pivot table.
+Other DAX Functions Used
 
----
+In addition to the main functions, I also used:
 
-## 📘 Key Learnings
-- Data Modeling  
-- DAX Calculations  
-- Filter Context  
-- Time-Based Analysis  
-- Data Visualization  
+Aggregation functions: SUM, AVERAGE, MAX
+Logical functions: IF, SWITCH
+Counting function: DISTINCTCOUNT
+Text function: CONCATENATE
+Date functions: YEAR, MONTH
+Time Intelligence
 
----
+I applied time intelligence functions for time-based analysis:
 
-## ⚠️ Important Note
-**QUICK MEASURE (YEAR-OVER-YEAR AND PREVIOUS MONTH) IS NOT WORKING IN MY PROJECT DUE TO DATE TABLE ISSUE.**
+Year-to-Date using TOTALYTD
+Previous Year comparison using SAMEPERIODLASTYEAR
+Running Total using CALCULATE along with DATESBETWEEN
+Visualization (Matrix)
+
+I created a Matrix visual in Power BI to analyze and compare the data based on:
+
+Region
+Product Category
+Customer Segment
+Year and Month
+
+This visual helps to compare performance in a structured way, similar to a pivot table.
+
+Key Learnings
+
+From this project, I learned:
+
+How to build a data model
+How to create and use DAX calculations
+Understanding of filter context
+Performing time-based analysis
+Creating useful data visualizations
+Important Note
+
+Quick measures such as Year-over-Year and Previous Month are not working properly in this project due to an issue with the Date table.
