@@ -1,0 +1,1001 @@
+shipping_id,order_id,shipping_date,shipping_cost,shipping_status,shipping_method
+1,1,2023-10-24,19.34,Delivered,Two-Day
+2,2,2025-06-10,14.11,"In Transit",Standard
+3,3,2025-03-24,3.31,Delayed,Overnight
+4,4,2025-02-01,6.72,"In Transit",Two-Day
+5,5,2025-06-20,19.45,Delayed,Standard
+6,6,2024-11-17,2.09,Delayed,Overnight
+7,7,2025-04-26,16.62,Delayed,Two-Day
+8,8,2024-07-21,14.12,Returned,Two-Day
+9,9,2024-08-12,3.49,"In Transit",Two-Day
+10,10,2024-01-30,17.64,Delivered,Standard
+11,11,2025-06-15,14.38,Delayed,Express
+12,12,2025-04-25,14.49,"In Transit",Express
+13,13,2025-03-05,16.81,"In Transit",Standard
+14,14,2025-06-19,6.27,Delayed,Standard
+15,15,2025-01-10,9.24,Delayed,Overnight
+16,16,2024-11-10,5.34,"In Transit",Overnight
+17,17,2025-02-09,7.12,Delivered,Overnight
+18,18,2025-03-13,16.66,"In Transit",Two-Day
+19,19,2025-06-14,10.38,Returned,Standard
+20,20,2024-12-09,6.57,Delivered,Express
+21,21,2024-05-25,5.97,Delayed,Overnight
+22,22,2024-10-13,2.37,"In Transit",Standard
+23,23,2025-06-27,9.65,"In Transit",Standard
+24,24,2024-09-25,14.56,Delayed,Overnight
+25,25,2024-07-19,10.78,Returned,Express
+26,26,2025-05-22,18.3,"In Transit",Express
+27,27,2023-12-08,13.6,Delivered,Express
+28,28,2025-04-03,13.83,Delivered,Express
+29,29,2025-05-19,10.65,Delivered,Two-Day
+30,30,2024-09-29,14.78,"In Transit",Two-Day
+31,31,2025-03-07,9.71,Delivered,Express
+32,32,2025-03-01,7.4,"In Transit",Express
+33,33,2025-02-26,8.7,Delayed,Express
+34,34,2025-06-22,9.98,Delivered,Express
+35,35,2025-04-25,14.61,"In Transit",Express
+36,36,2025-04-18,7.76,Returned,Two-Day
+37,37,2025-06-04,4.22,Delayed,Overnight
+38,38,2025-02-26,13.17,Returned,Standard
+39,39,2025-05-21,18.39,"In Transit",Overnight
+40,40,2025-06-13,12.43,Delivered,Express
+41,41,2023-11-23,5.23,Delivered,Two-Day
+42,42,2025-05-25,6.99,Delivered,Overnight
+43,43,2025-05-11,18.23,Returned,Express
+44,44,2025-06-21,6.94,"In Transit",Standard
+45,45,2024-05-10,4.33,Returned,Two-Day
+46,46,2024-12-10,16.03,Returned,Two-Day
+47,47,2024-11-18,18.18,"In Transit",Express
+48,48,2025-04-22,11.92,Delayed,Overnight
+49,49,2024-11-11,4.12,Returned,Overnight
+50,50,2025-02-07,10.01,Returned,Express
+51,51,2024-09-25,4.49,Returned,Overnight
+52,52,2025-05-12,3.18,"In Transit",Two-Day
+53,53,2025-05-26,10.36,Delivered,Standard
+54,54,2025-06-09,11.65,Delivered,Express
+55,55,2024-10-13,7.1,Returned,Express
+56,56,2025-05-22,9.09,Delayed,Two-Day
+57,57,2024-09-21,8.54,Delayed,Two-Day
+58,58,2025-04-09,17.19,"In Transit",Two-Day
+59,59,2025-05-15,4.09,"In Transit",Standard
+60,60,2025-06-14,12.91,Delivered,Overnight
+61,61,2025-06-27,16.22,Delayed,Standard
+62,62,2025-02-21,16.35,"In Transit",Two-Day
+63,63,2025-05-05,12.92,Returned,Standard
+64,64,2025-01-22,8.67,Delivered,Express
+65,65,2025-05-11,15.31,"In Transit",Standard
+66,66,2025-06-10,14.66,Delayed,Overnight
+67,67,2024-02-08,19.68,Delayed,Express
+68,68,2025-06-17,6.98,Returned,Express
+69,69,2025-05-02,5.41,Returned,Standard
+70,70,2025-05-31,10.13,"In Transit",Two-Day
+71,71,2023-11-29,10.69,"In Transit",Standard
+72,72,2025-03-01,10.36,Delivered,Overnight
+73,73,2024-07-06,8.52,Delivered,Two-Day
+74,74,2024-08-24,13.46,Delivered,Standard
+75,75,2024-05-06,17.35,"In Transit",Two-Day
+76,76,2023-11-08,2.39,Delayed,Standard
+77,77,2023-12-17,9.39,Returned,Standard
+78,78,2025-03-29,3.5,Delivered,Overnight
+79,79,2025-03-26,9.77,Delayed,Standard
+80,80,2024-04-17,17.12,Delivered,Two-Day
+81,81,2024-12-21,3.48,Delivered,Overnight
+82,82,2025-02-26,12.2,Delayed,Two-Day
+83,83,2024-03-03,10.74,Delivered,Express
+84,84,2025-05-18,15.66,"In Transit",Two-Day
+85,85,2024-11-10,9.39,Delayed,Express
+86,86,2024-12-22,11.89,Delayed,Express
+87,87,2025-04-30,11.91,"In Transit",Two-Day
+88,88,2024-05-04,4.19,Returned,Overnight
+89,89,2024-10-17,5.15,"In Transit",Standard
+90,90,2025-06-27,6.09,"In Transit",Express
+91,91,2025-02-26,7.78,"In Transit",Two-Day
+92,92,2024-09-15,5.27,Delivered,Express
+93,93,2024-09-27,3.27,Delayed,Standard
+94,94,2025-06-06,8.43,"In Transit",Overnight
+95,95,2024-10-13,2.48,"In Transit",Overnight
+96,96,2024-11-06,11.86,Delayed,Express
+97,97,2024-02-28,12.72,Delayed,Express
+98,98,2025-01-25,2.25,Returned,Overnight
+99,99,2025-06-11,7.93,Delivered,Express
+100,100,2025-04-11,4.63,"In Transit",Overnight
+101,101,2025-03-02,10.53,Delayed,Two-Day
+102,102,2025-01-06,14.1,Returned,Express
+103,103,2025-03-03,7.26,Delayed,Express
+104,104,2023-11-27,16.13,Delayed,Standard
+105,105,2025-03-04,11.22,Delayed,Express
+106,106,2025-05-31,18.5,Delayed,Two-Day
+107,107,2025-06-13,4.43,"In Transit",Overnight
+108,108,2025-06-21,18.42,Returned,Standard
+109,109,2024-06-10,12.29,Returned,Overnight
+110,110,2024-12-28,11.78,Returned,Express
+111,111,2025-05-11,15.88,Delivered,Two-Day
+112,112,2025-02-18,11.2,"In Transit",Overnight
+113,113,2024-09-04,7.34,Delayed,Express
+114,114,2024-07-21,8.9,Returned,Express
+115,115,2024-10-10,19.73,Delayed,Standard
+116,116,2024-04-22,7.21,Delivered,Express
+117,117,2025-03-23,13.02,Delivered,Overnight
+118,118,2024-05-02,17.15,Returned,Express
+119,119,2024-09-25,18.05,Delayed,Overnight
+120,120,2025-05-08,19.62,Delivered,Standard
+121,121,2024-10-21,7.71,Delayed,Two-Day
+122,122,2025-06-08,9.97,Delayed,Overnight
+123,123,2024-10-13,10.23,Delivered,Standard
+124,124,2024-01-11,18.46,Returned,Express
+125,125,2024-08-05,5.22,Returned,Two-Day
+126,126,2025-04-24,4.98,Delayed,Standard
+127,127,2024-10-09,4.48,Delivered,Overnight
+128,128,2025-03-11,13.04,"In Transit",Overnight
+129,129,2025-05-04,13.06,Returned,Two-Day
+130,130,2025-05-08,12.19,Delayed,Two-Day
+131,131,2025-06-16,18.46,Delayed,Standard
+132,132,2024-06-26,15.45,"In Transit",Express
+133,133,2025-06-24,17.75,Delayed,Two-Day
+134,134,2023-08-27,9.16,Delayed,Overnight
+135,135,2024-07-30,12.87,"In Transit",Express
+136,136,2025-02-25,3.35,Returned,Express
+137,137,2024-10-28,17.67,Delayed,Two-Day
+138,138,2025-06-19,14.47,Delayed,Two-Day
+139,139,2024-09-14,7.03,Delivered,Express
+140,140,2025-01-22,13.9,Returned,Standard
+141,141,2024-07-24,6,Delivered,Standard
+142,142,2025-04-01,6.17,"In Transit",Overnight
+143,143,2024-10-17,19.75,Returned,Two-Day
+144,144,2024-10-20,11.83,Delivered,Overnight
+145,145,2024-09-21,9.25,Delivered,Express
+146,146,2023-12-06,11.06,Delivered,Two-Day
+147,147,2024-12-06,6.07,Delivered,Express
+148,148,2025-06-05,12.74,Delayed,Overnight
+149,149,2024-02-23,12.76,"In Transit",Standard
+150,150,2025-02-13,7.15,Delivered,Overnight
+151,151,2024-11-21,7.19,Delivered,Overnight
+152,152,2024-08-23,14.4,Delivered,Two-Day
+153,153,2025-03-16,11.91,Returned,Express
+154,154,2025-03-15,13.07,"In Transit",Standard
+155,155,2025-04-07,19.85,Delayed,Overnight
+156,156,2024-10-23,5.08,Returned,Overnight
+157,157,2024-01-16,9.68,Delivered,Standard
+158,158,2024-06-17,18.03,"In Transit",Two-Day
+159,159,2025-04-19,5.56,"In Transit",Overnight
+160,160,2025-03-03,3.92,Delayed,Express
+161,161,2024-10-29,8.71,"In Transit",Two-Day
+162,162,2025-05-03,13.68,Delayed,Overnight
+163,163,2025-06-10,3.65,Delivered,Overnight
+164,164,2024-09-02,6.91,"In Transit",Two-Day
+165,165,2025-06-21,6.42,"In Transit",Overnight
+166,166,2025-05-28,7.43,Returned,Overnight
+167,167,2024-10-18,2.81,Returned,Express
+168,168,2025-06-09,16.35,Delivered,Standard
+169,169,2024-10-12,15.18,Returned,Overnight
+170,170,2025-05-08,2.95,"In Transit",Express
+171,171,2025-04-02,12.38,Returned,Two-Day
+172,172,2025-04-09,6.48,"In Transit",Overnight
+173,173,2025-02-23,7.68,Delivered,Standard
+174,174,2025-01-16,8.79,Delayed,Two-Day
+175,175,2024-07-04,16.49,Returned,Two-Day
+176,176,2025-01-31,17.02,Delayed,Two-Day
+177,177,2025-02-05,15.62,Delayed,Overnight
+178,178,2025-04-27,11.98,Delivered,Overnight
+179,179,2024-12-06,14.54,Delivered,Two-Day
+180,180,2024-05-27,17.73,"In Transit",Overnight
+181,181,2025-05-25,4.68,Delivered,Overnight
+182,182,2025-04-06,14.49,Delivered,Standard
+183,183,2025-03-22,19.44,Delivered,Two-Day
+184,184,2025-04-27,5.66,Delayed,Two-Day
+185,185,2024-10-30,11.93,Returned,Overnight
+186,186,2025-03-10,6.99,Returned,Express
+187,187,2025-01-07,13.88,Returned,Overnight
+188,188,2025-05-04,17.15,Returned,Overnight
+189,189,2024-02-26,12.84,"In Transit",Two-Day
+190,190,2025-05-14,4.51,Delivered,Two-Day
+191,191,2025-05-26,19.08,Returned,Standard
+192,192,2025-05-16,2.46,"In Transit",Overnight
+193,193,2024-07-24,11.91,Returned,Overnight
+194,194,2025-05-14,14.95,"In Transit",Overnight
+195,195,2025-05-10,13.2,Delayed,Overnight
+196,196,2023-09-16,17.97,Delivered,Express
+197,197,2025-05-16,4.42,Delayed,Overnight
+198,198,2024-12-23,10.65,Delivered,Express
+199,199,2025-05-26,4.46,Returned,Two-Day
+200,200,2024-11-21,15.61,Returned,Express
+201,201,2024-05-05,11.98,Returned,Express
+202,202,2024-11-21,5.7,Returned,Overnight
+203,203,2025-06-06,19.75,"In Transit",Standard
+204,204,2024-09-08,7.75,"In Transit",Express
+205,205,2024-06-28,2.82,Delivered,Overnight
+206,206,2024-08-29,7.89,"In Transit",Overnight
+207,207,2024-06-13,10.78,Delayed,Express
+208,208,2025-03-11,16.55,Delayed,Two-Day
+209,209,2024-02-11,3.7,Delayed,Standard
+210,210,2025-04-20,3.7,Delayed,Standard
+211,211,2025-02-10,12,Delayed,Express
+212,212,2025-03-24,6.05,Returned,Standard
+213,213,2025-06-29,4.32,Delivered,Express
+214,214,2024-08-01,13.52,Returned,Two-Day
+215,215,2025-04-24,7.92,"In Transit",Standard
+216,216,2024-08-03,18.46,Delayed,Express
+217,217,2024-05-09,14.25,Delayed,Overnight
+218,218,2024-08-15,7.92,Delayed,Standard
+219,219,2024-07-25,16.19,Delivered,Two-Day
+220,220,2025-06-10,12.39,Returned,Standard
+221,221,2025-05-20,7.26,Returned,Overnight
+222,222,2024-08-20,14.08,Delayed,Express
+223,223,2025-06-13,16.75,Delayed,Two-Day
+224,224,2025-05-30,19.61,Delayed,Overnight
+225,225,2025-06-13,14.52,Delayed,Two-Day
+226,226,2025-02-05,5.09,Delivered,Overnight
+227,227,2025-01-31,18.56,Returned,Two-Day
+228,228,2025-01-09,2.87,Delivered,Overnight
+229,229,2025-06-30,17.73,Returned,Express
+230,230,2025-05-13,6.09,Delivered,Overnight
+231,231,2025-03-30,13.83,Delivered,Express
+232,232,2024-03-07,4.32,Delivered,Two-Day
+233,233,2025-06-04,10.95,"In Transit",Overnight
+234,234,2025-06-17,19.61,Returned,Overnight
+235,235,2024-04-06,5.21,Returned,Express
+236,236,2024-11-25,11.7,"In Transit",Express
+237,237,2024-10-21,8.66,Returned,Two-Day
+238,238,2024-11-17,2.97,Delayed,Two-Day
+239,239,2025-05-06,19.88,"In Transit",Standard
+240,240,2025-06-11,10.68,Delayed,Overnight
+241,241,2025-06-26,9.13,Returned,Two-Day
+242,242,2025-06-08,5.12,"In Transit",Standard
+243,243,2024-12-22,9.65,Delayed,Two-Day
+244,244,2024-04-22,7.37,Delayed,Standard
+245,245,2025-06-09,6.67,Returned,Express
+246,246,2024-01-28,15.51,Returned,Standard
+247,247,2025-01-08,17.32,"In Transit",Two-Day
+248,248,2025-06-22,8.04,"In Transit",Two-Day
+249,249,2024-11-07,14.6,"In Transit",Two-Day
+250,250,2024-09-30,3.22,Returned,Overnight
+251,251,2024-11-19,6.96,Delayed,Standard
+252,252,2023-12-21,11.54,"In Transit",Two-Day
+253,253,2024-05-24,4.99,Delivered,Express
+254,254,2025-02-11,5.53,Delivered,Express
+255,255,2024-10-11,17.36,Returned,Overnight
+256,256,2024-08-25,5.94,"In Transit",Standard
+257,257,2024-10-01,7.41,Delayed,Two-Day
+258,258,2024-03-26,13.92,"In Transit",Express
+259,259,2025-01-29,13.33,Returned,Express
+260,260,2025-06-05,14.25,Delayed,Standard
+261,261,2025-05-30,6.12,Delayed,Express
+262,262,2025-03-24,6.4,"In Transit",Two-Day
+263,263,2024-04-09,7.33,"In Transit",Overnight
+264,264,2024-03-30,11.19,"In Transit",Express
+265,265,2025-06-26,5.44,"In Transit",Overnight
+266,266,2025-06-05,11.36,Delayed,Standard
+267,267,2024-12-09,8.71,"In Transit",Express
+268,268,2024-11-16,10.52,Returned,Two-Day
+269,269,2025-05-18,15.85,Delayed,Overnight
+270,270,2024-06-26,12.4,"In Transit",Standard
+271,271,2025-04-16,11.77,Delivered,Express
+272,272,2024-03-18,9.76,Delivered,Overnight
+273,273,2025-06-30,15.85,Delayed,Overnight
+274,274,2025-06-15,7.05,Returned,Express
+275,275,2025-06-17,8.89,Delayed,Express
+276,276,2025-05-26,14.92,"In Transit",Two-Day
+277,277,2024-08-13,11.96,"In Transit",Express
+278,278,2024-10-01,10.58,Returned,Overnight
+279,279,2025-01-11,10.24,Delayed,Standard
+280,280,2025-02-07,19.67,Delivered,Standard
+281,281,2025-06-25,19.86,Delayed,Two-Day
+282,282,2025-06-08,19.68,"In Transit",Overnight
+283,283,2024-09-29,11.67,Delayed,Express
+284,284,2024-10-15,6.81,"In Transit",Express
+285,285,2025-06-17,12.94,Delivered,Standard
+286,286,2025-05-18,13.16,Delayed,Express
+287,287,2024-08-12,18.44,Returned,Standard
+288,288,2024-12-21,8.97,Delayed,Standard
+289,289,2024-04-20,13.6,"In Transit",Two-Day
+290,290,2025-06-16,3.73,Delivered,Standard
+291,291,2023-10-13,7.2,Delivered,Two-Day
+292,292,2025-07-01,19,Delayed,Express
+293,293,2025-04-20,5.75,Delivered,Express
+294,294,2025-06-27,11.26,Delayed,Two-Day
+295,295,2024-08-08,9.68,Delayed,Express
+296,296,2024-06-17,19.3,Delayed,Two-Day
+297,297,2025-04-14,11.85,Returned,Express
+298,298,2024-12-05,19.01,Delayed,Express
+299,299,2024-05-28,17.53,Returned,Express
+300,300,2025-03-03,8.1,Delayed,Overnight
+301,301,2025-06-09,13.95,Delayed,Express
+302,302,2024-11-02,8.34,"In Transit",Express
+303,303,2024-11-04,8.03,Delayed,Standard
+304,304,2025-06-07,16.07,"In Transit",Overnight
+305,305,2025-05-04,7.02,Delayed,Standard
+306,306,2024-12-10,13.3,Delayed,Express
+307,307,2025-05-15,18.73,"In Transit",Express
+308,308,2025-04-24,7.75,"In Transit",Overnight
+309,309,2024-07-25,17.89,"In Transit",Standard
+310,310,2024-07-21,2.84,"In Transit",Two-Day
+311,311,2025-06-12,16.37,"In Transit",Two-Day
+312,312,2025-04-10,9.9,"In Transit",Two-Day
+313,313,2025-03-03,12.95,Delivered,Two-Day
+314,314,2025-06-16,6.11,Returned,Express
+315,315,2024-08-11,3.69,Returned,Overnight
+316,316,2025-04-05,8.27,Returned,Standard
+317,317,2025-06-21,19.6,Delayed,Two-Day
+318,318,2025-06-21,15.44,Returned,Two-Day
+319,319,2024-08-28,10.21,Returned,Standard
+320,320,2025-02-11,15.14,"In Transit",Two-Day
+321,321,2025-06-06,11.34,Delayed,Two-Day
+322,322,2024-05-25,18.28,Delivered,Express
+323,323,2023-10-22,18.93,Delayed,Two-Day
+324,324,2025-01-18,6.63,Delayed,Overnight
+325,325,2025-05-06,12.06,Delayed,Two-Day
+326,326,2025-06-14,8.9,"In Transit",Express
+327,327,2025-03-21,7.67,Returned,Two-Day
+328,328,2025-06-26,4.43,"In Transit",Express
+329,329,2025-06-23,11.01,Delivered,Express
+330,330,2025-03-04,6.12,Delayed,Standard
+331,331,2025-06-30,12,Delayed,Standard
+332,332,2025-06-23,7.69,Delayed,Overnight
+333,333,2025-02-16,16.22,Delivered,Express
+334,334,2025-04-01,17.73,"In Transit",Overnight
+335,335,2025-06-26,11.3,"In Transit",Two-Day
+336,336,2023-10-25,18.12,Returned,Express
+337,337,2025-06-29,12.75,Returned,Two-Day
+338,338,2024-12-03,8.81,Returned,Overnight
+339,339,2025-06-11,13.49,Returned,Overnight
+340,340,2025-05-07,19.08,Delivered,Two-Day
+341,341,2025-06-24,7.29,"In Transit",Overnight
+342,342,2024-05-18,10.07,Delayed,Overnight
+343,343,2025-06-08,15.54,Delivered,Standard
+344,344,2024-10-30,5.48,"In Transit",Express
+345,345,2024-12-28,10.09,"In Transit",Express
+346,346,2025-04-11,18.14,Returned,Overnight
+347,347,2025-01-05,6.06,Returned,Overnight
+348,348,2025-02-16,18.04,Delayed,Overnight
+349,349,2025-02-17,5.6,Delivered,Overnight
+350,350,2025-04-29,19.16,Delivered,Standard
+351,351,2025-02-15,4.71,Delayed,Standard
+352,352,2024-11-03,13,"In Transit",Express
+353,353,2024-10-25,5.75,"In Transit",Standard
+354,354,2024-08-22,3.99,"In Transit",Standard
+355,355,2024-11-25,4.46,Returned,Express
+356,356,2024-10-01,12.99,"In Transit",Standard
+357,357,2025-01-10,16.9,Returned,Standard
+358,358,2025-01-18,12.47,"In Transit",Overnight
+359,359,2025-06-06,13.08,"In Transit",Express
+360,360,2025-04-26,7.13,"In Transit",Two-Day
+361,361,2024-08-27,17.14,Delivered,Standard
+362,362,2024-09-09,11.3,Delivered,Overnight
+363,363,2024-06-23,12.17,Returned,Overnight
+364,364,2024-04-08,14,"In Transit",Standard
+365,365,2025-02-11,17.39,Delivered,Overnight
+366,366,2024-12-25,11.13,"In Transit",Express
+367,367,2024-06-10,17.27,"In Transit",Two-Day
+368,368,2025-02-24,18.38,Delivered,Standard
+369,369,2024-03-18,17.75,Returned,Two-Day
+370,370,2024-04-02,4.73,Delivered,Express
+371,371,2023-12-13,15.46,"In Transit",Two-Day
+372,372,2024-01-26,8.98,Delivered,Standard
+373,373,2025-05-23,7.69,"In Transit",Express
+374,374,2025-03-13,2.2,Delivered,Two-Day
+375,375,2024-07-02,19.78,Delayed,Standard
+376,376,2024-08-04,9.15,Delivered,Two-Day
+377,377,2025-01-06,15.47,"In Transit",Overnight
+378,378,2025-06-24,7.75,Delivered,Two-Day
+379,379,2024-10-08,9.92,Delayed,Two-Day
+380,380,2025-05-22,7.95,Delayed,Overnight
+381,381,2025-01-21,10.85,"In Transit",Two-Day
+382,382,2024-07-18,18.17,Returned,Express
+383,383,2024-07-09,2.31,"In Transit",Overnight
+384,384,2025-05-10,2.84,Returned,Standard
+385,385,2024-10-02,13.41,Delayed,Express
+386,386,2025-03-13,4.3,"In Transit",Express
+387,387,2025-02-03,7.09,Returned,Overnight
+388,388,2024-12-04,18.23,Delayed,Express
+389,389,2024-12-14,3.5,Returned,Express
+390,390,2025-06-24,15.57,Delayed,Two-Day
+391,391,2025-04-24,13.46,Delivered,Overnight
+392,392,2024-08-05,2.67,"In Transit",Overnight
+393,393,2024-09-18,13.18,Returned,Overnight
+394,394,2025-05-28,17.76,Delivered,Two-Day
+395,395,2024-05-28,16.21,Delayed,Overnight
+396,396,2024-09-22,19.89,Returned,Two-Day
+397,397,2024-06-08,2.1,Delayed,Overnight
+398,398,2024-08-12,4.15,"In Transit",Overnight
+399,399,2025-04-23,11.77,Returned,Standard
+400,400,2025-06-04,7.98,Delayed,Express
+401,401,2025-01-14,15.39,Delayed,Two-Day
+402,402,2024-12-05,8.39,"In Transit",Standard
+403,403,2024-05-27,5.74,Delivered,Overnight
+404,404,2025-05-25,5.84,Returned,Standard
+405,405,2024-10-26,6,Returned,Two-Day
+406,406,2025-02-08,13.44,"In Transit",Overnight
+407,407,2024-12-25,9.53,"In Transit",Overnight
+408,408,2024-02-02,3.42,Delayed,Overnight
+409,409,2025-06-24,18.52,Delivered,Express
+410,410,2024-08-18,14.83,Delivered,Express
+411,411,2024-09-15,4.79,Returned,Two-Day
+412,412,2025-06-10,2.42,"In Transit",Overnight
+413,413,2025-02-04,18.09,"In Transit",Standard
+414,414,2025-03-12,17.18,Returned,Overnight
+415,415,2024-10-20,10.86,"In Transit",Overnight
+416,416,2024-12-08,14.96,Delivered,Overnight
+417,417,2025-06-12,15.57,Delayed,Standard
+418,418,2024-04-24,18.78,Delayed,Express
+419,419,2025-06-10,3.77,Delayed,Two-Day
+420,420,2025-02-02,6.2,Delayed,Two-Day
+421,421,2024-10-28,3.79,Returned,Two-Day
+422,422,2025-04-13,7.25,Delayed,Standard
+423,423,2024-04-29,10.84,Returned,Express
+424,424,2025-03-28,15.52,Delivered,Overnight
+425,425,2025-03-03,18.76,Delivered,Two-Day
+426,426,2025-05-28,17.16,Delivered,Overnight
+427,427,2025-06-29,16.48,Delayed,Express
+428,428,2025-06-07,18.87,Delayed,Overnight
+429,429,2025-06-17,14.58,Delayed,Overnight
+430,430,2025-06-30,9.31,Delivered,Standard
+431,431,2024-03-29,8.87,Delivered,Express
+432,432,2025-04-29,8.21,Delayed,Standard
+433,433,2025-04-30,14.5,"In Transit",Overnight
+434,434,2025-04-08,17.02,Delayed,Express
+435,435,2025-03-07,8.42,Returned,Express
+436,436,2024-02-08,14.48,Delayed,Two-Day
+437,437,2024-04-15,16.01,"In Transit",Overnight
+438,438,2024-04-30,10.99,Returned,Overnight
+439,439,2025-01-05,7.27,Returned,Standard
+440,440,2025-01-17,11.71,Delayed,Standard
+441,441,2024-07-12,8.31,Delivered,Two-Day
+442,442,2025-03-13,9.37,Returned,Two-Day
+443,443,2024-05-18,7.12,Delayed,Two-Day
+444,444,2025-04-24,5.43,"In Transit",Standard
+445,445,2023-10-23,4.89,Delivered,Standard
+446,446,2025-06-15,6.83,Delivered,Two-Day
+447,447,2025-05-03,6,Delivered,Standard
+448,448,2025-05-18,15.69,Delayed,Overnight
+449,449,2025-05-18,9.78,Returned,Express
+450,450,2024-11-29,16.87,Delivered,Overnight
+451,451,2025-04-11,5.71,Delivered,Express
+452,452,2025-02-18,17,Delayed,Overnight
+453,453,2024-11-02,16.73,Delivered,Express
+454,454,2025-06-08,12.75,"In Transit",Standard
+455,455,2025-04-12,9.42,Delayed,Standard
+456,456,2025-01-18,7.16,Delayed,Standard
+457,457,2025-04-15,8.47,"In Transit",Overnight
+458,458,2025-03-22,15.62,Returned,Express
+459,459,2024-01-07,5.77,Returned,Two-Day
+460,460,2025-06-08,16.24,"In Transit",Two-Day
+461,461,2025-06-23,19.71,Returned,Two-Day
+462,462,2025-04-20,15.36,Delayed,Two-Day
+463,463,2025-03-27,18.43,"In Transit",Standard
+464,464,2025-02-14,19.81,Delayed,Standard
+465,465,2025-02-12,14.85,Delivered,Standard
+466,466,2025-05-14,16.19,Returned,Overnight
+467,467,2025-03-13,14.83,Delivered,Express
+468,468,2024-12-12,7.31,Returned,Standard
+469,469,2024-12-20,16.58,Delayed,Overnight
+470,470,2025-01-25,19.29,"In Transit",Standard
+471,471,2025-06-29,5.31,Delivered,Overnight
+472,472,2025-02-05,5.71,Delayed,Overnight
+473,473,2025-04-10,12.3,Delayed,Two-Day
+474,474,2024-10-10,8.14,Delivered,Express
+475,475,2024-05-06,10.99,"In Transit",Overnight
+476,476,2024-12-04,11.2,Delivered,Standard
+477,477,2025-02-01,16.75,"In Transit",Overnight
+478,478,2024-11-10,15.37,Delivered,Overnight
+479,479,2025-01-25,17.55,Delivered,Express
+480,480,2025-02-21,3.76,Delivered,Standard
+481,481,2025-01-10,5.76,Returned,Standard
+482,482,2025-06-07,10.83,Delivered,Two-Day
+483,483,2024-04-30,4.58,"In Transit",Two-Day
+484,484,2024-09-27,19.87,Delivered,Two-Day
+485,485,2024-08-04,16.09,"In Transit",Express
+486,486,2025-05-25,11.47,Delayed,Express
+487,487,2025-05-20,11.13,Delayed,Express
+488,488,2025-05-31,9.99,Returned,Express
+489,489,2025-03-28,19.21,Delayed,Standard
+490,490,2025-06-01,11.34,Delayed,Standard
+491,491,2024-04-02,17.02,Delayed,Overnight
+492,492,2025-04-01,16.93,Delayed,Standard
+493,493,2024-10-27,11.11,Returned,Two-Day
+494,494,2024-07-19,3.62,Returned,Two-Day
+495,495,2025-06-25,12.71,Delayed,Standard
+496,496,2025-06-01,17.94,"In Transit",Overnight
+497,497,2025-05-04,19.88,Delayed,Overnight
+498,498,2025-01-05,5.72,Delayed,Overnight
+499,499,2025-05-21,14.27,Delivered,Express
+500,500,2025-04-29,9.47,"In Transit",Overnight
+501,501,2025-06-09,12.34,Delayed,Overnight
+502,502,2025-04-13,19.83,"In Transit",Standard
+503,503,2024-11-30,11.81,"In Transit",Standard
+504,504,2025-02-14,9.51,"In Transit",Overnight
+505,505,2024-05-08,19.48,Delayed,Express
+506,506,2025-04-16,7.29,"In Transit",Two-Day
+507,507,2024-11-07,18.52,Delivered,Overnight
+508,508,2025-06-27,3.8,Returned,Overnight
+509,509,2024-02-10,6.26,Delayed,Standard
+510,510,2025-01-31,12.56,Delivered,Overnight
+511,511,2025-06-02,2.61,Delayed,Standard
+512,512,2024-11-17,17.73,Delayed,Two-Day
+513,513,2024-12-23,10.04,Delayed,Overnight
+514,514,2024-09-19,17.19,"In Transit",Two-Day
+515,515,2024-10-19,16.86,"In Transit",Standard
+516,516,2024-04-14,6.48,Delayed,Express
+517,517,2024-04-04,6.32,"In Transit",Overnight
+518,518,2025-05-26,2.81,Delayed,Express
+519,519,2025-03-01,10.78,Delivered,Standard
+520,520,2024-04-30,15.68,Delivered,Standard
+521,521,2025-06-29,18.3,Returned,Two-Day
+522,522,2025-05-21,12.55,Returned,Overnight
+523,523,2025-04-27,5.94,"In Transit",Overnight
+524,524,2025-04-05,17.38,Delivered,Two-Day
+525,525,2024-11-21,5.83,Delivered,Two-Day
+526,526,2025-04-18,15.54,Returned,Express
+527,527,2024-11-08,17.29,Returned,Express
+528,528,2024-11-07,19.22,Delayed,Overnight
+529,529,2024-04-07,16.77,"In Transit",Standard
+530,530,2024-07-28,19.76,Returned,Overnight
+531,531,2025-03-25,18.53,Delivered,Express
+532,532,2025-01-10,11.87,"In Transit",Express
+533,533,2025-01-24,17.67,Delayed,Standard
+534,534,2025-05-01,8.93,Delayed,Two-Day
+535,535,2025-01-05,3.68,"In Transit",Standard
+536,536,2025-02-19,9.41,Delivered,Express
+537,537,2025-01-01,19.79,Returned,Standard
+538,538,2025-04-01,10.16,Delayed,Standard
+539,539,2024-04-16,3.39,Returned,Overnight
+540,540,2024-04-14,6.88,Delivered,Express
+541,541,2025-05-20,4.62,Delivered,Two-Day
+542,542,2024-03-10,5.08,Delivered,Standard
+543,543,2024-01-24,15.96,"In Transit",Overnight
+544,544,2023-10-14,9.63,Returned,Express
+545,545,2025-01-22,11.18,Delayed,Standard
+546,546,2025-05-08,13.35,Delivered,Express
+547,547,2024-10-19,3.12,Returned,Standard
+548,548,2024-12-28,19.64,Delayed,Two-Day
+549,549,2025-05-16,4.07,Returned,Two-Day
+550,550,2025-06-03,7.9,Delayed,Standard
+551,551,2025-05-24,2.34,"In Transit",Overnight
+552,552,2025-05-29,4.84,Delayed,Two-Day
+553,553,2025-03-29,14.22,Delivered,Overnight
+554,554,2025-03-19,9.83,Delivered,Express
+555,555,2024-01-28,3.56,Returned,Standard
+556,556,2025-06-08,13.61,Delivered,Express
+557,557,2025-06-22,16.91,Delayed,Express
+558,558,2024-06-12,3.06,Delayed,Overnight
+559,559,2025-04-21,19.85,Returned,Two-Day
+560,560,2025-04-03,13.31,Returned,Two-Day
+561,561,2024-08-31,3.82,Delayed,Express
+562,562,2025-05-16,19.2,Delivered,Overnight
+563,563,2025-04-11,18.66,Delayed,Overnight
+564,564,2025-01-18,8.45,Delivered,Two-Day
+565,565,2025-04-22,12.64,Delayed,Two-Day
+566,566,2025-05-09,15.33,Delayed,Standard
+567,567,2023-09-24,11.74,Delayed,Standard
+568,568,2024-05-29,7.81,Returned,Two-Day
+569,569,2024-11-09,4.27,Delayed,Express
+570,570,2024-12-24,16.94,"In Transit",Two-Day
+571,571,2024-03-25,6.36,Delivered,Standard
+572,572,2025-05-20,15.96,"In Transit",Overnight
+573,573,2024-07-30,2.26,Delivered,Two-Day
+574,574,2024-03-31,4.7,Delayed,Overnight
+575,575,2025-01-17,5.96,Delivered,Two-Day
+576,576,2025-05-03,4.39,"In Transit",Standard
+577,577,2024-09-21,17.89,"In Transit",Two-Day
+578,578,2025-02-12,13.67,"In Transit",Two-Day
+579,579,2025-04-27,4.95,"In Transit",Overnight
+580,580,2024-10-18,15.17,Returned,Standard
+581,581,2025-04-18,5,Delayed,Two-Day
+582,582,2024-08-22,6.24,Delivered,Overnight
+583,583,2025-06-14,10.22,Delivered,Express
+584,584,2025-03-20,7.09,"In Transit",Overnight
+585,585,2025-01-19,3.89,Delivered,Two-Day
+586,586,2024-08-29,7.79,"In Transit",Standard
+587,587,2025-05-24,9.36,Delivered,Two-Day
+588,588,2025-03-28,8.87,Delivered,Express
+589,589,2024-01-25,9.38,Delayed,Two-Day
+590,590,2025-06-27,3.03,Returned,Standard
+591,591,2024-04-02,14.51,Delivered,Two-Day
+592,592,2025-01-28,16.82,Delayed,Standard
+593,593,2025-02-24,17.89,Delayed,Overnight
+594,594,2024-12-04,8.49,Returned,Overnight
+595,595,2024-09-19,10.61,Delivered,Express
+596,596,2024-11-25,9.97,Delayed,Standard
+597,597,2025-01-01,15.35,"In Transit",Two-Day
+598,598,2025-06-12,13.36,Delayed,Two-Day
+599,599,2025-04-29,6.99,Delivered,Two-Day
+600,600,2025-04-25,19.62,Delivered,Standard
+601,601,2025-05-18,18.65,"In Transit",Express
+602,602,2025-05-17,9.96,"In Transit",Express
+603,603,2024-12-10,16.9,Returned,Two-Day
+604,604,2025-02-07,18.79,"In Transit",Overnight
+605,605,2024-11-04,14.51,Returned,Standard
+606,606,2025-06-13,14.65,Delayed,Express
+607,607,2025-03-11,12.15,"In Transit",Express
+608,608,2025-05-25,10.05,Delayed,Standard
+609,609,2025-06-14,12.22,Delivered,Express
+610,610,2024-05-29,18.49,Delivered,Standard
+611,611,2025-01-07,10.99,Delayed,Express
+612,612,2024-12-21,18.73,Delayed,Two-Day
+613,613,2025-04-05,18.51,"In Transit",Two-Day
+614,614,2025-01-05,4.81,Delayed,Express
+615,615,2025-04-12,13.62,Delayed,Standard
+616,616,2023-09-01,17.2,Returned,Express
+617,617,2024-08-18,15.77,"In Transit",Overnight
+618,618,2025-02-22,8.42,Returned,Two-Day
+619,619,2025-06-14,16.82,Returned,Two-Day
+620,620,2025-04-26,4.71,"In Transit",Express
+621,621,2023-12-13,13.8,Delivered,Two-Day
+622,622,2025-06-22,2.11,Returned,Two-Day
+623,623,2025-06-28,17.19,Returned,Express
+624,624,2025-06-16,11.98,"In Transit",Standard
+625,625,2024-12-25,13.89,"In Transit",Express
+626,626,2024-09-23,9.05,Delayed,Express
+627,627,2025-03-04,11.63,Delivered,Express
+628,628,2024-10-17,13.21,"In Transit",Standard
+629,629,2024-04-11,15.49,"In Transit",Standard
+630,630,2025-01-01,14.99,Delayed,Two-Day
+631,631,2025-05-15,2.9,Delayed,Overnight
+632,632,2024-01-21,14.32,Returned,Express
+633,633,2024-03-15,7.67,Returned,Overnight
+634,634,2023-09-20,16.99,Returned,Standard
+635,635,2024-11-14,10.23,Returned,Standard
+636,636,2025-06-09,7.9,"In Transit",Overnight
+637,637,2024-10-14,6.33,Delayed,Standard
+638,638,2024-10-28,2.23,Returned,Express
+639,639,2023-10-20,6.91,Delivered,Overnight
+640,640,2025-03-10,18.46,Returned,Two-Day
+641,641,2025-03-28,11.72,Delivered,Standard
+642,642,2025-02-25,13.45,Returned,Overnight
+643,643,2024-09-13,14.7,"In Transit",Express
+644,644,2024-08-24,3.49,"In Transit",Express
+645,645,2025-06-12,11.07,Returned,Overnight
+646,646,2025-06-27,8.37,Delivered,Two-Day
+647,647,2025-05-26,17.13,Returned,Overnight
+648,648,2023-11-13,19.54,Delivered,Overnight
+649,649,2024-09-28,16.27,Delayed,Express
+650,650,2024-12-22,5.62,"In Transit",Standard
+651,651,2025-05-26,13.38,Delivered,Standard
+652,652,2024-11-29,10.17,Delayed,Standard
+653,653,2025-06-15,5.03,"In Transit",Two-Day
+654,654,2024-03-13,9.3,Delayed,Standard
+655,655,2025-04-26,7.46,Delivered,Overnight
+656,656,2023-09-28,9.25,Delayed,Two-Day
+657,657,2025-06-07,10.89,Delayed,Two-Day
+658,658,2025-03-23,10.68,Delivered,Two-Day
+659,659,2024-06-30,2.23,"In Transit",Overnight
+660,660,2024-11-01,4.46,"In Transit",Overnight
+661,661,2024-10-21,17.89,Returned,Overnight
+662,662,2025-02-12,4.42,Returned,Express
+663,663,2025-04-15,19.83,Delayed,Standard
+664,664,2025-06-15,9.83,"In Transit",Standard
+665,665,2025-04-13,18.13,Delivered,Express
+666,666,2025-04-09,15.95,"In Transit",Two-Day
+667,667,2024-07-03,6.01,Delivered,Express
+668,668,2024-01-08,3.68,Returned,Express
+669,669,2025-04-25,17.37,Delayed,Overnight
+670,670,2025-06-17,6.81,Delayed,Overnight
+671,671,2025-04-22,3.6,Returned,Overnight
+672,672,2025-03-10,6.52,Delayed,Two-Day
+673,673,2024-10-06,7.12,Delayed,Two-Day
+674,674,2025-02-20,13.28,"In Transit",Two-Day
+675,675,2025-01-11,16.03,Delivered,Two-Day
+676,676,2024-11-18,9.21,Delivered,Two-Day
+677,677,2025-03-05,3.09,Returned,Express
+678,678,2025-04-25,2.27,Delayed,Overnight
+679,679,2025-06-13,11.27,Delayed,Standard
+680,680,2025-06-26,14.31,Delivered,Overnight
+681,681,2024-11-01,16.93,"In Transit",Two-Day
+682,682,2024-05-07,10.62,"In Transit",Two-Day
+683,683,2025-03-31,19.88,Delivered,Two-Day
+684,684,2024-08-17,5.47,Delivered,Express
+685,685,2025-06-25,3.01,Returned,Express
+686,686,2025-06-28,13.18,Delivered,Two-Day
+687,687,2025-02-19,15.92,"In Transit",Overnight
+688,688,2024-07-13,11.17,Returned,Express
+689,689,2025-03-29,8.86,Delivered,Express
+690,690,2025-01-05,3.97,Returned,Express
+691,691,2025-06-18,5.23,Delayed,Express
+692,692,2025-05-01,10.92,Delayed,Standard
+693,693,2025-06-11,2.55,Returned,Two-Day
+694,694,2025-04-16,19.87,Returned,Standard
+695,695,2025-01-11,8.76,"In Transit",Overnight
+696,696,2025-04-24,19.19,"In Transit",Two-Day
+697,697,2024-10-26,14.77,Returned,Express
+698,698,2025-01-01,10.57,Delivered,Two-Day
+699,699,2025-05-18,10.76,Returned,Standard
+700,700,2025-06-10,12.16,Delivered,Express
+701,701,2025-06-04,10.12,Returned,Standard
+702,702,2024-08-11,19.31,"In Transit",Two-Day
+703,703,2024-02-07,8.9,"In Transit",Express
+704,704,2025-05-11,4.94,"In Transit",Express
+705,705,2024-11-30,12.44,Returned,Standard
+706,706,2024-04-06,11.89,Delivered,Standard
+707,707,2024-03-19,16.11,Delivered,Overnight
+708,708,2025-04-23,4.61,"In Transit",Express
+709,709,2025-04-29,15.56,"In Transit",Overnight
+710,710,2025-06-04,19.55,Delivered,Express
+711,711,2024-11-07,7.38,Returned,Overnight
+712,712,2025-05-21,16.51,Delivered,Two-Day
+713,713,2025-06-21,2.28,Returned,Express
+714,714,2024-07-27,13.32,"In Transit",Standard
+715,715,2024-05-19,4.53,"In Transit",Standard
+716,716,2023-09-26,17.76,Delayed,Standard
+717,717,2025-04-18,19.96,"In Transit",Overnight
+718,718,2024-10-19,11.38,Delivered,Express
+719,719,2025-03-04,14.61,Delivered,Express
+720,720,2025-05-27,8.89,Delivered,Express
+721,721,2025-06-21,11.24,"In Transit",Express
+722,722,2025-02-21,11.76,Delayed,Two-Day
+723,723,2024-04-22,11.51,Delivered,Standard
+724,724,2023-12-30,11.28,Delayed,Two-Day
+725,725,2025-01-14,13.19,Delivered,Two-Day
+726,726,2025-05-25,7.46,Returned,Standard
+727,727,2025-06-26,12.47,"In Transit",Two-Day
+728,728,2025-05-07,9.48,Returned,Overnight
+729,729,2025-02-09,16.07,"In Transit",Two-Day
+730,730,2025-04-04,4.75,Returned,Two-Day
+731,731,2024-09-24,19.34,"In Transit",Two-Day
+732,732,2024-07-13,15.18,"In Transit",Overnight
+733,733,2024-12-11,14.18,Returned,Standard
+734,734,2025-06-19,8.73,"In Transit",Overnight
+735,735,2025-06-30,2.02,Delayed,Express
+736,736,2024-08-29,11.06,Delayed,Two-Day
+737,737,2025-01-02,3.24,Delayed,Two-Day
+738,738,2025-01-17,3.7,Delayed,Overnight
+739,739,2024-10-09,11.02,Delivered,Two-Day
+740,740,2024-11-11,9.33,Delayed,Standard
+741,741,2025-04-02,7.98,"In Transit",Overnight
+742,742,2025-04-26,17.16,Delayed,Standard
+743,743,2024-09-26,18.79,Delayed,Overnight
+744,744,2024-07-11,5.57,Delayed,Express
+745,745,2025-02-12,16.06,"In Transit",Overnight
+746,746,2025-06-21,6.83,Delivered,Express
+747,747,2024-06-22,14.17,Delivered,Two-Day
+748,748,2024-11-08,13.9,Returned,Express
+749,749,2025-04-30,2.14,"In Transit",Overnight
+750,750,2024-11-14,13.97,Returned,Express
+751,751,2024-09-24,19.41,Returned,Two-Day
+752,752,2024-09-14,4.75,Delivered,Standard
+753,753,2024-10-28,18.48,Delayed,Standard
+754,754,2023-11-26,12.94,Returned,Overnight
+755,755,2025-04-10,17.22,Delayed,Standard
+756,756,2025-05-26,6.42,"In Transit",Express
+757,757,2023-11-10,12.2,Delivered,Overnight
+758,758,2024-11-30,17.72,"In Transit",Overnight
+759,759,2024-11-04,4.03,Delivered,Express
+760,760,2024-11-23,2.13,Returned,Standard
+761,761,2025-02-21,8.06,Delayed,Express
+762,762,2024-08-09,12.24,Delayed,Standard
+763,763,2025-01-19,19.73,Delayed,Overnight
+764,764,2024-11-15,18.03,Delayed,Standard
+765,765,2025-06-23,17.28,Delayed,Two-Day
+766,766,2024-11-19,15.77,Returned,Two-Day
+767,767,2025-02-10,14.64,Returned,Express
+768,768,2024-07-13,19.83,"In Transit",Two-Day
+769,769,2024-04-23,6.64,Delayed,Express
+770,770,2024-11-12,18.01,Returned,Express
+771,771,2025-06-06,14.68,Delayed,Express
+772,772,2025-06-06,14.98,Delayed,Two-Day
+773,773,2024-08-15,17.71,"In Transit",Express
+774,774,2023-08-07,16.76,"In Transit",Two-Day
+775,775,2025-06-28,6.17,"In Transit",Express
+776,776,2024-06-01,11.24,Delivered,Overnight
+777,777,2024-05-12,6,Delayed,Overnight
+778,778,2025-04-18,10.38,Delivered,Standard
+779,779,2025-01-03,12.09,"In Transit",Two-Day
+780,780,2025-03-27,14.67,Delayed,Express
+781,781,2025-06-17,7.25,"In Transit",Express
+782,782,2024-05-18,4.4,Returned,Express
+783,783,2025-01-24,16.2,Delivered,Standard
+784,784,2025-05-25,3.89,Returned,Overnight
+785,785,2025-05-09,5.43,Delayed,Express
+786,786,2025-05-29,11.73,Returned,Two-Day
+787,787,2025-05-26,15.88,Returned,Two-Day
+788,788,2025-06-30,12.89,"In Transit",Two-Day
+789,789,2024-08-13,17.86,Returned,Two-Day
+790,790,2025-06-05,9.72,Delivered,Express
+791,791,2025-03-26,19.87,Delayed,Overnight
+792,792,2025-01-25,6.78,Delayed,Standard
+793,793,2024-07-25,13.52,"In Transit",Overnight
+794,794,2025-05-05,16.79,Delivered,Two-Day
+795,795,2024-05-29,4.68,Returned,Standard
+796,796,2024-09-26,15.46,"In Transit",Standard
+797,797,2024-04-01,10.59,Delivered,Overnight
+798,798,2025-04-16,2.64,Returned,Two-Day
+799,799,2025-01-01,3.96,Delivered,Overnight
+800,800,2025-02-16,15.51,Delayed,Overnight
+801,801,2025-04-20,15.62,Delivered,Express
+802,802,2024-07-26,7.56,"In Transit",Standard
+803,803,2025-06-25,10.16,Returned,Two-Day
+804,804,2025-06-10,9.83,Delayed,Two-Day
+805,805,2023-12-09,5.02,Delivered,Express
+806,806,2025-06-01,3.08,"In Transit",Overnight
+807,807,2025-06-19,2.65,"In Transit",Overnight
+808,808,2025-04-28,16.06,"In Transit",Express
+809,809,2024-11-28,18.78,"In Transit",Overnight
+810,810,2025-06-23,19.28,Delayed,Two-Day
+811,811,2025-06-20,8.44,"In Transit",Express
+812,812,2025-03-12,19.93,"In Transit",Standard
+813,813,2025-03-20,8.73,Delayed,Standard
+814,814,2025-04-17,6.39,Delayed,Two-Day
+815,815,2024-12-15,2.27,Returned,Overnight
+816,816,2023-08-01,16.51,Returned,Overnight
+817,817,2025-02-21,8.15,Returned,Overnight
+818,818,2025-07-01,11.2,Delivered,Standard
+819,819,2024-10-01,7.97,Returned,Overnight
+820,820,2025-05-02,11.44,"In Transit",Standard
+821,821,2024-11-04,4.09,Returned,Two-Day
+822,822,2025-07-01,6.3,Returned,Two-Day
+823,823,2023-12-15,8.59,"In Transit",Two-Day
+824,824,2025-01-21,12.16,Delivered,Overnight
+825,825,2025-03-07,2.26,Delayed,Two-Day
+826,826,2025-01-09,7.35,Delivered,Standard
+827,827,2024-04-07,7.95,Delayed,Overnight
+828,828,2024-07-30,7.48,Returned,Overnight
+829,829,2024-07-07,15.45,Delivered,Two-Day
+830,830,2025-05-21,13.45,"In Transit",Express
+831,831,2024-09-29,15.61,Returned,Overnight
+832,832,2025-03-04,14.08,Returned,Express
+833,833,2025-06-12,7.07,Returned,Express
+834,834,2025-03-21,10.41,Delayed,Express
+835,835,2023-10-24,16.59,"In Transit",Express
+836,836,2025-01-25,16.51,Delayed,Overnight
+837,837,2024-06-22,19.51,Returned,Express
+838,838,2025-06-06,15.09,Delayed,Overnight
+839,839,2025-05-24,19.48,"In Transit",Express
+840,840,2025-06-03,11.14,Returned,Express
+841,841,2025-06-06,6.2,Returned,Express
+842,842,2023-12-06,12.58,Delayed,Standard
+843,843,2025-01-09,17.06,Delayed,Two-Day
+844,844,2025-02-11,9.83,"In Transit",Overnight
+845,845,2025-06-21,19.33,Delayed,Overnight
+846,846,2024-01-23,12.93,Delayed,Overnight
+847,847,2024-09-27,17.75,"In Transit",Overnight
+848,848,2024-09-20,5.21,Delivered,Standard
+849,849,2024-05-31,9.58,Delivered,Two-Day
+850,850,2025-06-17,14.29,Delivered,Two-Day
+851,851,2024-08-26,19.53,Returned,Express
+852,852,2024-09-30,12.35,Delayed,Standard
+853,853,2025-04-14,9.73,"In Transit",Overnight
+854,854,2025-06-27,4.3,Delayed,Standard
+855,855,2025-02-12,16.32,Returned,Overnight
+856,856,2024-05-29,11.19,Returned,Overnight
+857,857,2024-06-08,13.06,Returned,Standard
+858,858,2024-07-08,18.03,Delayed,Overnight
+859,859,2025-04-03,2.46,Returned,Overnight
+860,860,2025-02-21,19.23,Delivered,Overnight
+861,861,2024-01-14,2.28,Delayed,Overnight
+862,862,2025-03-25,16.48,Delayed,Standard
+863,863,2023-09-01,18,Delayed,Two-Day
+864,864,2025-02-05,2.5,Delayed,Standard
+865,865,2024-01-16,7.24,Returned,Two-Day
+866,866,2025-06-24,14.16,Returned,Standard
+867,867,2025-06-27,14.51,Delayed,Overnight
+868,868,2025-06-15,5.27,Delayed,Two-Day
+869,869,2024-11-28,15.36,Delivered,Standard
+870,870,2024-01-04,17.45,Delayed,Standard
+871,871,2025-02-12,16.78,Delivered,Standard
+872,872,2024-11-09,5.95,"In Transit",Two-Day
+873,873,2024-03-23,14.43,"In Transit",Two-Day
+874,874,2024-07-23,5.83,Delivered,Standard
+875,875,2024-03-04,17.8,"In Transit",Two-Day
+876,876,2024-03-24,3.61,"In Transit",Express
+877,877,2024-04-26,12.98,Returned,Overnight
+878,878,2024-05-12,12.89,"In Transit",Express
+879,879,2025-01-31,4.72,"In Transit",Express
+880,880,2025-04-11,16.26,Delivered,Overnight
+881,881,2025-06-16,11.73,Delivered,Overnight
+882,882,2025-05-21,12.51,"In Transit",Standard
+883,883,2024-07-14,17.1,Returned,Express
+884,884,2025-05-05,18.9,"In Transit",Express
+885,885,2024-08-31,15.32,Delivered,Two-Day
+886,886,2025-04-30,4.15,Delivered,Standard
+887,887,2024-02-03,19.03,Delayed,Express
+888,888,2024-09-16,15.51,"In Transit",Standard
+889,889,2024-02-19,6.89,Delayed,Express
+890,890,2025-02-15,14.96,Returned,Express
+891,891,2025-05-26,15.17,"In Transit",Standard
+892,892,2024-11-19,3.6,Returned,Express
+893,893,2025-05-12,12.19,Delivered,Standard
+894,894,2024-05-17,6.02,Returned,Two-Day
+895,895,2025-06-21,17.89,Delayed,Two-Day
+896,896,2025-01-20,6.18,Returned,Overnight
+897,897,2025-06-27,5,Returned,Overnight
+898,898,2025-05-14,11.51,Delayed,Two-Day
+899,899,2024-09-23,7.99,"In Transit",Two-Day
+900,900,2025-02-03,11.31,Returned,Two-Day
+901,901,2024-07-05,15.23,Delayed,Two-Day
+902,902,2025-02-10,18.65,Delivered,Standard
+903,903,2024-10-22,3.36,Delivered,Standard
+904,904,2025-06-16,7.47,Returned,Two-Day
+905,905,2025-07-01,13.81,Delivered,Overnight
+906,906,2024-05-26,2.31,Delayed,Overnight
+907,907,2025-02-09,10.38,Returned,Two-Day
+908,908,2024-08-16,19.74,Delivered,Express
+909,909,2025-05-04,12.35,Returned,Standard
+910,910,2025-01-09,7.88,Delivered,Two-Day
+911,911,2025-05-13,18.75,"In Transit",Standard
+912,912,2025-02-11,11.3,"In Transit",Express
+913,913,2025-05-11,17.87,Delayed,Two-Day
+914,914,2024-07-05,5.63,Delayed,Two-Day
+915,915,2025-03-21,15.24,Delivered,Standard
+916,916,2024-05-03,4.56,Delivered,Standard
+917,917,2025-04-23,15.49,Delivered,Standard
+918,918,2023-07-11,7.35,"In Transit",Standard
+919,919,2025-06-11,16.74,"In Transit",Standard
+920,920,2024-12-09,13.45,Returned,Express
+921,921,2024-08-12,3.55,Delivered,Express
+922,922,2025-05-01,3.07,Delayed,Two-Day
+923,923,2025-04-24,3.8,Delivered,Standard
+924,924,2025-06-21,6,"In Transit",Overnight
+925,925,2024-02-23,11.55,Delayed,Two-Day
+926,926,2025-04-19,3.77,Returned,Express
+927,927,2025-04-02,2.57,Returned,Overnight
+928,928,2024-12-27,2.36,"In Transit",Express
+929,929,2025-01-17,3.4,"In Transit",Standard
+930,930,2024-06-30,17.34,"In Transit",Standard
+931,931,2024-12-24,18.26,Delayed,Overnight
+932,932,2024-08-05,5.52,Delayed,Overnight
+933,933,2025-03-19,14.34,Delivered,Two-Day
+934,934,2025-01-04,9.02,Delivered,Two-Day
+935,935,2024-11-28,12.77,Delivered,Two-Day
+936,936,2024-04-16,10.55,"In Transit",Express
+937,937,2025-06-02,7.14,"In Transit",Two-Day
+938,938,2025-06-15,10.89,Delivered,Standard
+939,939,2023-11-19,17.97,"In Transit",Two-Day
+940,940,2025-03-06,11.3,Delivered,Express
+941,941,2024-11-16,16.57,"In Transit",Express
+942,942,2025-03-03,18.05,Delivered,Express
+943,943,2025-06-03,5.08,Returned,Express
+944,944,2025-04-25,5.43,"In Transit",Two-Day
+945,945,2025-04-16,12.46,Delayed,Express
+946,946,2024-06-03,11.02,Delayed,Overnight
+947,947,2024-10-07,13.97,Returned,Overnight
+948,948,2025-05-10,4.64,Delayed,Express
+949,949,2025-01-24,17.69,Delivered,Standard
+950,950,2025-05-19,4.59,"In Transit",Standard
+951,951,2024-08-12,19.15,Delivered,Two-Day
+952,952,2025-04-12,13.43,Delivered,Standard
+953,953,2025-05-17,19.51,Returned,Two-Day
+954,954,2025-04-30,7.56,Delivered,Standard
+955,955,2025-05-19,14.12,Delayed,Standard
+956,956,2025-05-09,12.9,Returned,Two-Day
+957,957,2024-12-24,10.38,Delayed,Overnight
+958,958,2025-05-09,16.15,Delayed,Overnight
+959,959,2024-06-07,2.34,Delayed,Overnight
+960,960,2024-10-30,7.64,Delivered,Express
+961,961,2024-09-28,8.4,Delayed,Express
+962,962,2025-03-02,3.04,Delivered,Overnight
+963,963,2025-03-26,13.78,Returned,Standard
+964,964,2024-05-04,8.47,Delivered,Overnight
+965,965,2025-04-04,17.13,"In Transit",Two-Day
+966,966,2025-02-22,5.07,Delayed,Two-Day
+967,967,2025-05-04,9.15,Delivered,Overnight
+968,968,2025-04-27,12.13,Returned,Standard
+969,969,2024-11-24,9.93,Delayed,Overnight
+970,970,2024-10-02,17.55,Returned,Express
+971,971,2024-06-10,3.3,Returned,Overnight
+972,972,2024-10-14,4.63,Returned,Two-Day
+973,973,2024-09-14,18.88,Returned,Two-Day
+974,974,2025-06-05,3.9,Delivered,Express
+975,975,2025-05-22,12.31,Returned,Two-Day
+976,976,2024-08-06,18.97,Delayed,Overnight
+977,977,2025-05-15,6,Returned,Standard
+978,978,2025-02-21,13.26,Delayed,Overnight
+979,979,2025-06-23,6.57,"In Transit",Two-Day
+980,980,2025-04-15,4.67,Delayed,Standard
+981,981,2025-03-11,5.48,"In Transit",Standard
+982,982,2024-10-09,9.29,Delivered,Standard
+983,983,2024-03-24,2.02,Delivered,Express
+984,984,2025-04-14,5.4,"In Transit",Express
+985,985,2025-05-27,12.7,Delayed,Express
+986,986,2025-04-11,7.33,Delayed,Two-Day
+987,987,2025-03-12,6.28,Delivered,Standard
+988,988,2025-04-19,5.22,"In Transit",Two-Day
+989,989,2025-04-06,17.38,Delayed,Standard
+990,990,2024-12-20,8.94,"In Transit",Standard
+991,991,2025-04-01,14.06,Delayed,Overnight
+992,992,2025-06-19,6.21,Delayed,Standard
+993,993,2025-06-27,3.85,"In Transit",Express
+994,994,2024-10-29,12.6,"In Transit",Overnight
+995,995,2024-08-25,9.37,Returned,Two-Day
+996,996,2024-11-13,19.25,Delivered,Two-Day
+997,997,2025-05-23,15.53,Delivered,Two-Day
+998,998,2025-06-23,8.78,Returned,Express
+999,999,2024-05-13,11.76,Delayed,Express
+1000,1000,2024-11-05,9.54,"In Transit",Overnight

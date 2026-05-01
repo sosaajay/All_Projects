@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathematics & Statistics Quest — Data Science ke Liye!</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fffbf0;--bg2:#fef9e7;--bg3:#fde68a;--card:#ffffff;--card2:#fffdf5;
+  --border:rgba(180,83,9,0.12);--border2:rgba(180,83,9,0.25);
+  --neon-blue:#2563eb;--neon-cyan:#0891b2;--neon-purple:#7c3aed;
+  --neon-pink:#db2777;--neon-green:#16a34a;--neon-yellow:#b45309;
+  --neon-orange:#c2410c;--neon-red:#dc2626;
+  --neon-amber:#d97706;--neon-gold:#b45309;
+  --text:#1c1405;--muted:#4b5563;--dim:#9ca3af;
+  --font-head:'Syne',sans-serif;--font-body:'Plus Jakarta Sans',sans-serif;--font-mono:'JetBrains Mono',monospace;
+  --glow-amber:0 4px 16px rgba(217,119,6,0.22),0 1px 4px rgba(217,119,6,0.12);
+  --glow-gold:0 4px 16px rgba(180,83,9,0.22),0 1px 4px rgba(180,83,9,0.12);
+  --glow-orange:0 4px 16px rgba(194,65,12,0.18),0 1px 4px rgba(194,65,12,0.10);
+  --glow-blue:0 4px 16px rgba(37,99,235,0.18),0 1px 4px rgba(37,99,235,0.10);
+  --glow-green:0 4px 16px rgba(22,163,74,0.18),0 1px 4px rgba(22,163,74,0.10);
+  --glow-pink:0 4px 16px rgba(219,39,119,0.18),0 1px 4px rgba(219,39,119,0.10);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.8;font-size:16px;overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--neon-amber);border-radius:3px;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(217,119,6,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(217,119,6,0.05) 1px,transparent 1px);background-size:50px 50px;}
+.container-main{max-width:1280px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:1;}
+
+/* XP BAR */
+.xp-strip{position:sticky;top:0;z-index:1000;background:rgba(255,251,240,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border2);box-shadow:0 2px 12px rgba(217,119,6,0.10);padding:0.65rem 0;}
+.xp-inner{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.xp-label{font-family:var(--font-head);font-weight:800;font-size:0.8rem;color:var(--neon-amber);letter-spacing:2px;text-transform:uppercase;white-space:nowrap;}
+.xp-bar-wrap{flex:1;min-width:120px;background:rgba(217,119,6,0.10);border-radius:50px;height:10px;border:1px solid rgba(217,119,6,0.25);overflow:hidden;}
+.xp-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--neon-amber),var(--neon-orange),var(--neon-pink));border-radius:50px;transition:width 1s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 0 10px rgba(217,119,6,0.4);position:relative;}
+.xp-bar-fill::after{content:'';position:absolute;right:0;top:0;bottom:0;width:30px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4));animation:shimmer 2s infinite;}
+@keyframes shimmer{0%,100%{opacity:0;}50%{opacity:1;}}
+.xp-score{font-family:var(--font-head);font-weight:800;font-size:0.9rem;color:var(--neon-amber);white-space:nowrap;}
+.xp-badges{display:flex;gap:0.4rem;flex-wrap:wrap;}
+.xp-badge{font-size:0.72rem;font-weight:700;padding:0.2rem 0.65rem;border-radius:50px;border:1px solid;white-space:nowrap;transition:0.3s;opacity:0.35;}
+.xp-badge.earned{opacity:1;animation:badgePop 0.5s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes badgePop{0%{transform:scale(0);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.xp-badge.b1{border-color:var(--neon-amber);color:var(--neon-amber);}
+.xp-badge.b2{border-color:var(--neon-orange);color:var(--neon-orange);}
+.xp-badge.b3{border-color:var(--neon-gold);color:var(--neon-gold);}
+.xp-badge.b4{border-color:var(--neon-blue);color:var(--neon-blue);}
+.xp-badge.b5{border-color:var(--neon-green);color:var(--neon-green);}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:6rem 0 5rem;
+  background:radial-gradient(ellipse at 20% 50%,rgba(217,119,6,0.14) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 20%,rgba(180,83,9,0.10) 0%,transparent 55%),
+             radial-gradient(ellipse at 60% 80%,rgba(194,65,12,0.07) 0%,transparent 50%),var(--bg);}
+.hero-orbit{position:absolute;top:50%;right:8%;transform:translateY(-50%);width:420px;height:420px;pointer-events:none;}
+.orbit-ring{position:absolute;border-radius:50%;border:1px solid rgba(217,119,6,0.28);top:50%;left:50%;transform:translate(-50%,-50%);}
+.orbit-ring:nth-child(1){width:150px;height:150px;animation:spin 12s linear infinite;}
+.orbit-ring:nth-child(2){width:250px;height:250px;animation:spin 20s linear infinite reverse;border-color:rgba(180,83,9,0.22);}
+.orbit-ring:nth-child(3){width:350px;height:350px;animation:spin 30s linear infinite;border-color:rgba(194,65,12,0.15);}
+.orbit-dot{position:absolute;width:8px;height:8px;border-radius:50%;top:-4px;left:50%;transform:translateX(-50%);}
+.orbit-ring:nth-child(1) .orbit-dot{background:var(--neon-amber);box-shadow:var(--glow-amber);}
+.orbit-ring:nth-child(2) .orbit-dot{background:var(--neon-gold);box-shadow:var(--glow-gold);}
+.orbit-ring:nth-child(3) .orbit-dot{background:var(--neon-orange);box-shadow:var(--glow-orange);}
+.orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;animation:float 4s ease-in-out infinite;}
+@keyframes spin{from{transform:translate(-50%,-50%) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg);}}
+@keyframes float{0%,100%{transform:translate(-50%,-50%) translateY(0);}50%{transform:translate(-50%,-50%) translateY(-12px);}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(217,119,6,0.12);border:1px solid rgba(217,119,6,0.3);border-radius:50px;padding:0.3rem 1rem;font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--neon-amber);margin-bottom:1.5rem;}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--neon-amber);box-shadow:var(--glow-amber);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+.hero h1{font-family:var(--font-head);font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:1.1;letter-spacing:-1.5px;margin-bottom:1.5rem;}
+.hero h1 .line1{display:block;color:#1c1405;}
+.hero h1 .line2{display:block;background:linear-gradient(135deg,var(--neon-amber) 0%,var(--neon-orange) 50%,var(--neon-pink) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:1.1rem;color:var(--muted);max-width:560px;margin-bottom:2rem;line-height:1.75;}
+.hero-stats{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.hero-stat-item{text-align:center;}
+.hero-stat-num{font-family:var(--font-head);font-weight:800;font-size:1.8rem;line-height:1;background:linear-gradient(135deg,var(--neon-amber),var(--neon-orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-stat-label{font-size:0.75rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-top:0.2rem;}
+.hero-cta{display:inline-flex;align-items:center;gap:0.6rem;background:linear-gradient(135deg,var(--neon-amber),var(--neon-orange));color:white;font-weight:700;font-size:0.95rem;padding:0.8rem 2rem;border-radius:50px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px rgba(217,119,6,0.35);transition:0.3s;animation:pulse-btn 2s infinite;}
+@keyframes pulse-btn{0%,100%{box-shadow:0 4px 20px rgba(217,119,6,0.3);}50%{box-shadow:0 4px 32px rgba(217,119,6,0.5);}}
+.hero-cta:hover{transform:translateY(-2px) scale(1.03);color:white;}
+
+/* QUEST MAP */
+.quest-map{background:var(--card);border:1px solid var(--border2);border-radius:20px;padding:2rem;margin:3rem 0;position:relative;box-shadow:0 4px 24px rgba(217,119,6,0.08);}
+.quest-map::before{content:'';position:absolute;inset:0;border-radius:20px;background:linear-gradient(135deg,rgba(217,119,6,0.03),rgba(180,83,9,0.03));pointer-events:none;}
+.quest-map-title{font-family:var(--font-head);font-weight:800;font-size:1.1rem;color:var(--neon-amber);letter-spacing:2px;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
+.quest-map-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(217,119,6,0.4),transparent);}
+.quest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;}
+.quest-item{display:flex;align-items:center;gap:0.75rem;background:#fffdf5;border:1px solid var(--border);border-radius:12px;padding:0.75rem 1rem;text-decoration:none;color:var(--muted);font-weight:600;font-size:0.88rem;transition:0.25s;}
+.quest-item:hover{background:rgba(217,119,6,0.06);border-color:rgba(217,119,6,0.3);color:var(--neon-amber);transform:translateX(4px);}
+.quest-num{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:800;font-size:0.78rem;flex-shrink:0;}
+
+/* LEVEL CARD */
+.level-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:2.5rem;margin-bottom:2.5rem;position:relative;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s;}
+.level-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:24px 24px 0 0;}
+.level-card.lvl-amber::before{background:linear-gradient(90deg,var(--neon-amber),var(--neon-orange));}
+.level-card.lvl-orange::before{background:linear-gradient(90deg,var(--neon-orange),var(--neon-pink));}
+.level-card.lvl-gold::before{background:linear-gradient(90deg,var(--neon-gold),var(--neon-amber));}
+.level-card.lvl-blue::before{background:linear-gradient(90deg,var(--neon-blue),var(--neon-cyan));}
+.level-card.lvl-green::before{background:linear-gradient(90deg,var(--neon-green),var(--neon-cyan));}
+.level-card.lvl-pink::before{background:linear-gradient(90deg,var(--neon-pink),var(--neon-purple));}
+.level-card.lvl-purple::before{background:linear-gradient(90deg,var(--neon-purple),var(--neon-pink));}
+.level-card:hover{box-shadow:0 8px 32px rgba(217,119,6,0.12);}
+.level-card .corner-deco{position:absolute;top:1.2rem;right:1.5rem;font-family:var(--font-head);font-weight:800;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;opacity:0.25;}
+.lv-header{display:flex;align-items:flex-start;gap:1.2rem;margin-bottom:1.8rem;}
+.lv-icon-wrap{width:60px;height:60px;border-radius:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem;position:relative;}
+.lv-icon-wrap::after{content:'';position:absolute;inset:-3px;border-radius:18px;border:1px solid;opacity:0.4;}
+.ico-amber{background:rgba(217,119,6,0.12);color:var(--neon-amber);}.ico-amber::after{border-color:var(--neon-amber);}
+.ico-orange{background:rgba(194,65,12,0.12);color:var(--neon-orange);}.ico-orange::after{border-color:var(--neon-orange);}
+.ico-gold{background:rgba(180,83,9,0.12);color:var(--neon-gold);}.ico-gold::after{border-color:var(--neon-gold);}
+.ico-blue{background:rgba(37,99,235,0.12);color:var(--neon-blue);}.ico-blue::after{border-color:var(--neon-blue);}
+.ico-green{background:rgba(22,163,74,0.12);color:var(--neon-green);}.ico-green::after{border-color:var(--neon-green);}
+.ico-pink{background:rgba(219,39,119,0.12);color:var(--neon-pink);}.ico-pink::after{border-color:var(--neon-pink);}
+.ico-purple{background:rgba(124,58,237,0.12);color:var(--neon-purple);}.ico-purple::after{border-color:var(--neon-purple);}
+.ico-cyan{background:rgba(8,145,178,0.12);color:var(--neon-cyan);}.ico-cyan::after{border-color:var(--neon-cyan);}
+.lv-meta{flex:1;}
+.lv-eyebrow{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:0.35rem;}
+.lv-title{font-family:var(--font-head);font-weight:800;font-size:1.6rem;line-height:1.2;color:var(--text);}
+.lv-xp{margin-top:0.4rem;display:inline-flex;align-items:center;gap:0.4rem;background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);border-radius:50px;padding:0.2rem 0.75rem;font-size:0.75rem;font-weight:700;color:var(--neon-amber);}
+
+/* CALLOUT */
+.callout{border-radius:14px;padding:1.2rem 1.4rem;margin:1.2rem 0;border:1px solid;position:relative;overflow:hidden;}
+.callout::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px;}
+.callout .ct{font-weight:800;font-size:0.95rem;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem;}
+.cb-amber{background:rgba(217,119,6,0.06);border-color:rgba(217,119,6,0.22);}.cb-amber::before{background:var(--neon-amber);}.cb-amber .ct{color:var(--neon-amber);}
+.cb-orange{background:rgba(194,65,12,0.06);border-color:rgba(194,65,12,0.2);}.cb-orange::before{background:var(--neon-orange);}.cb-orange .ct{color:var(--neon-orange);}
+.cb-gold{background:rgba(180,83,9,0.06);border-color:rgba(180,83,9,0.2);}.cb-gold::before{background:var(--neon-gold);}.cb-gold .ct{color:var(--neon-gold);}
+.cb-blue{background:rgba(37,99,235,0.06);border-color:rgba(37,99,235,0.2);}.cb-blue::before{background:var(--neon-blue);}.cb-blue .ct{color:var(--neon-blue);}
+.cb-green{background:rgba(22,163,74,0.06);border-color:rgba(22,163,74,0.2);}.cb-green::before{background:var(--neon-green);}.cb-green .ct{color:var(--neon-green);}
+.cb-pink{background:rgba(219,39,119,0.06);border-color:rgba(219,39,119,0.2);}.cb-pink::before{background:var(--neon-pink);}.cb-pink .ct{color:var(--neon-pink);}
+.cb-purple{background:rgba(124,58,237,0.06);border-color:rgba(124,58,237,0.2);}.cb-purple::before{background:var(--neon-purple);}.cb-purple .ct{color:var(--neon-purple);}
+.cb-cyan{background:rgba(8,145,178,0.06);border-color:rgba(8,145,178,0.2);}.cb-cyan::before{background:var(--neon-cyan);}.cb-cyan .ct{color:var(--neon-cyan);}
+.cb-red{background:rgba(220,38,38,0.06);border-color:rgba(220,38,38,0.2);}.cb-red::before{background:var(--neon-red);}.cb-red .ct{color:var(--neon-red);}
+
+/* STEP TIMELINE */
+.step-timeline{position:relative;padding-left:2.8rem;}
+.step-timeline::before{content:'';position:absolute;left:15px;top:4px;bottom:4px;width:2px;background:linear-gradient(180deg,var(--neon-amber),var(--neon-orange),var(--neon-pink));opacity:0.45;border-radius:2px;}
+.step-item{position:relative;margin-bottom:1.3rem;background:#fffdf5;border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.3rem;box-shadow:0 2px 8px rgba(217,119,6,0.05);transition:0.25s;}
+.step-item:hover{border-color:var(--border2);background:#fff9e6;}
+.step-item::before{content:attr(data-step);position:absolute;left:-2.8rem;top:1rem;width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid var(--neon-amber);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:800;font-size:0.78rem;color:var(--neon-amber);box-shadow:0 2px 8px rgba(217,119,6,0.2);}
+.step-label{font-weight:700;color:var(--text);font-size:0.98rem;margin-bottom:0.35rem;}
+.step-body{color:var(--muted);font-size:0.92rem;line-height:1.7;}
+
+/* ACH CARD */
+.ach-card{background:#ffffff;border:1px solid var(--border);border-radius:18px;padding:1.5rem;height:100%;transition:0.3s;text-align:center;position:relative;overflow:hidden;}
+.ach-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;opacity:0;transition:opacity 0.3s;}
+.ach-card:hover{transform:translateY(-6px);border-color:var(--border2);}
+.ach-card:hover::after{opacity:1;}
+.ach-card.ac-amber::after{background:var(--neon-amber);}.ach-card.ac-amber:hover{box-shadow:0 16px 48px rgba(217,119,6,0.2);}
+.ach-card.ac-orange::after{background:var(--neon-orange);}.ach-card.ac-orange:hover{box-shadow:0 10px 28px rgba(194,65,12,0.15);}
+.ach-card.ac-gold::after{background:var(--neon-gold);}.ach-card.ac-gold:hover{box-shadow:0 10px 28px rgba(180,83,9,0.15);}
+.ach-card.ac-blue::after{background:var(--neon-blue);}.ach-card.ac-blue:hover{box-shadow:0 16px 48px rgba(37,99,235,0.2);}
+.ach-card.ac-green::after{background:var(--neon-green);}.ach-card.ac-green:hover{box-shadow:0 16px 48px rgba(22,163,74,0.2);}
+.ach-card.ac-pink::after{background:var(--neon-pink);}.ach-card.ac-pink:hover{box-shadow:0 16px 48px rgba(219,39,119,0.2);}
+.ach-card.ac-cyan::after{background:var(--neon-cyan);}.ach-card.ac-cyan:hover{box-shadow:0 16px 48px rgba(8,145,178,0.2);}
+.ach-icon{font-size:2.2rem;margin-bottom:0.75rem;display:block;}
+.ach-title{font-family:var(--font-head);font-weight:800;font-size:1rem;margin-bottom:0.5rem;}
+.ach-desc{font-size:0.88rem;color:var(--muted);line-height:1.65;}
+
+/* TABLE */
+.gtbl{width:100%;border-collapse:separate;border-spacing:0;border-radius:14px;overflow:hidden;border:1px solid var(--border);}
+.gtbl thead th{background:rgba(217,119,6,0.08);color:var(--neon-amber);font-family:var(--font-head);font-weight:700;padding:0.9rem 1rem;text-align:left;border-bottom:1px solid rgba(217,119,6,0.15);font-size:0.85rem;letter-spacing:0.5px;}
+.gtbl tbody td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.92rem;vertical-align:top;}
+.gtbl tbody tr:last-child td{border-bottom:none;}
+.gtbl tbody tr:hover td{background:rgba(217,119,6,0.03);color:var(--text);}
+.gtbl tbody td strong{color:var(--text);}
+
+/* DIM CARD */
+.dim-card{background:#ffffff;border:1px solid var(--border);border-radius:18px;padding:1.5rem;height:100%;transition:0.3s;position:relative;overflow:hidden;}
+.dim-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(217,119,6,0.12);}
+.dim-rank{font-family:var(--font-head);font-weight:800;font-size:2.5rem;line-height:1;margin-bottom:0.25rem;}
+.dim-name{font-weight:700;font-size:1rem;margin-bottom:0.8rem;}
+.dim-desc{font-size:0.88rem;color:var(--muted);margin-bottom:0.75rem;line-height:1.6;}
+.dim-example{font-size:0.82rem;padding:0.5rem 0.75rem;border-radius:8px;border:1px solid;}
+
+/* STAT PILLS */
+.stat-pill{display:inline-flex;align-items:center;gap:0.4rem;border-radius:50px;padding:0.3rem 0.9rem;font-weight:700;font-size:0.8rem;border:1px solid;}
+.sp-amber{background:rgba(217,119,6,0.08);border-color:rgba(217,119,6,0.3);color:var(--neon-amber);}
+.sp-orange{background:rgba(194,65,12,0.08);border-color:rgba(194,65,12,0.3);color:var(--neon-orange);}
+.sp-gold{background:rgba(180,83,9,0.08);border-color:rgba(180,83,9,0.3);color:var(--neon-gold);}
+.sp-blue{background:rgba(37,99,235,0.08);border-color:rgba(37,99,235,0.3);color:var(--neon-blue);}
+.sp-green{background:rgba(22,163,74,0.08);border-color:rgba(22,163,74,0.3);color:var(--neon-green);}
+.sp-pink{background:rgba(219,39,119,0.08);border-color:rgba(219,39,119,0.3);color:var(--neon-pink);}
+.sp-purple{background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.3);color:var(--neon-purple);}
+.sp-cyan{background:rgba(8,145,178,0.08);border-color:rgba(8,145,178,0.3);color:var(--neon-cyan);}
+.sp-red{background:rgba(220,38,38,0.08);border-color:rgba(220,38,38,0.3);color:var(--neon-red);}
+
+/* INLINE CODE */
+.inline-code{background:rgba(217,119,6,0.08);color:#78350f;padding:0.1rem 0.45rem;border-radius:6px;font-family:var(--font-mono);font-size:0.88em;border:1px solid rgba(217,119,6,0.25);}
+
+/* HIGHLIGHT */
+.hl{background:rgba(180,83,9,0.1);color:#78350f;padding:0 5px;border-radius:4px;}
+.hl-amber{background:rgba(217,119,6,0.12);color:var(--neon-amber);padding:0 5px;border-radius:4px;}
+.hl-blue{background:rgba(37,99,235,0.1);color:var(--neon-blue);padding:0 5px;border-radius:4px;}
+.hl-green{background:rgba(22,163,74,0.1);color:var(--neon-green);padding:0 5px;border-radius:4px;}
+.hl-pink{background:rgba(219,39,119,0.1);color:var(--neon-pink);padding:0 5px;border-radius:4px;}
+.hl-red{background:rgba(220,38,38,0.1);color:var(--neon-red);padding:0 5px;border-radius:4px;}
+
+/* GLOW DIVIDER */
+.glow-div{height:2px;border-radius:2px;margin:2rem 0;opacity:0.4;background:linear-gradient(90deg,transparent,var(--neon-amber),var(--neon-orange),var(--neon-pink),transparent);}
+
+/* MERMAID */
+.mermaid-wrap{background:#fffdf5;border:1px solid var(--border);border-radius:16px;padding:1.5rem;margin:1.5rem 0;text-align:center;overflow-x:auto;box-shadow:0 2px 12px rgba(217,119,6,0.06);}
+
+/* ═══ CHART VISUALIZATIONS (pure CSS/HTML) ═══ */
+/* Bar Chart */
+.chart-wrap{background:#fffdf5;border:1px solid var(--border);border-radius:14px;padding:1.4rem;margin:1.2rem 0;}
+.chart-title{font-family:var(--font-head);font-weight:800;font-size:0.82rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--neon-amber);margin-bottom:1rem;}
+.bar-chart{display:flex;align-items:flex-end;gap:8px;height:120px;padding-bottom:0;}
+.bar-col{display:flex;flex-direction:column;align-items:center;flex:1;gap:4px;}
+.bar-fill{width:100%;border-radius:5px 5px 0 0;transition:opacity 0.3s;min-width:20px;}
+.bar-fill:hover{opacity:0.75;}
+.bar-val{font-family:var(--font-mono);font-size:0.68rem;font-weight:700;color:var(--dim);}
+.bar-label{font-size:0.68rem;font-weight:600;color:var(--muted);text-align:center;word-break:break-word;}
+/* Horizontal Bar */
+.h-bar-wrap{margin:0.5rem 0;}
+.h-bar-label{font-size:0.82rem;font-weight:600;color:var(--muted);margin-bottom:0.2rem;}
+.h-bar-track{height:22px;background:#f3f4f6;border-radius:50px;overflow:hidden;border:1px solid var(--border);}
+.h-bar-fill{height:100%;border-radius:50px;display:flex;align-items:center;padding-left:0.7rem;font-family:var(--font-mono);font-size:0.72rem;font-weight:700;color:#fff;transition:width 0.5s;}
+/* Pie Visual (CSS conic gradient) */
+.pie-wrap{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.pie-circle{width:120px;height:120px;border-radius:50%;flex-shrink:0;}
+.pie-legend{display:flex;flex-direction:column;gap:0.4rem;}
+.pie-legend-item{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;font-weight:600;color:var(--muted);}
+.pie-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+/* Population Sample Visual */
+.pop-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;padding:0.75rem;}
+.pop-dot{width:100%;aspect-ratio:1;border-radius:50%;}
+/* Normal Curve pure CSS */
+.curve-container{position:relative;height:80px;overflow:hidden;}
+.curve-svg{width:100%;height:100%;}
+
+/* QUIZ */
+.quiz-box{background:#fffdf5;border:1px solid rgba(217,119,6,0.22);border-radius:20px;padding:1.6rem;margin:1.8rem 0;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(217,119,6,0.08);}
+.quiz-box::before{content:'⚡ QUICK CHALLENGE';position:absolute;top:0;right:0;background:linear-gradient(135deg,var(--neon-amber),var(--neon-orange));color:#fff;font-family:var(--font-head);font-weight:800;font-size:0.62rem;letter-spacing:2px;padding:0.32rem 0.9rem;border-radius:0 20px 0 12px;}
+.quiz-q{font-weight:700;color:#1c1405;margin-bottom:1.1rem;font-size:1.02rem;line-height:1.55;}
+.quiz-options{display:flex;flex-direction:column;gap:0.55rem;}
+.quiz-opt{background:#ffffff;border:1.5px solid #e5e7eb;border-radius:12px;padding:0.75rem 1.1rem;cursor:pointer;font-size:0.93rem;color:#374151;transition:background 0.15s,border-color 0.15s,transform 0.12s;font-weight:500;display:flex;align-items:center;gap:0.85rem;user-select:none;}
+.quiz-opt:not(.answered-opt):hover{background:#f3f4f6;border-color:#9ca3af;color:#111827;transform:translateX(3px);}
+.quiz-opt.correct{background:#f0fdf4;border-color:#16a34a;color:#14532d;font-weight:700;}
+.quiz-opt.correct .opt-letter{background:#16a34a;color:#fff;}
+.quiz-opt.wrong{background:#fef2f2;border-color:#dc2626;color:#991b1b;opacity:0.8;}
+.quiz-opt.wrong .opt-letter{background:#dc2626;color:#fff;}
+.quiz-opt.dimmed{opacity:0.45;pointer-events:none;}
+.quiz-opt .opt-letter{width:28px;height:28px;border-radius:8px;background:#f3f4f6;color:#6b7280;border:1.5px solid #e5e7eb;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:800;font-size:0.8rem;flex-shrink:0;transition:background 0.2s,color 0.2s;}
+.quiz-explain{display:none;font-size:0.84rem;font-weight:500;margin-top:-0.35rem;margin-bottom:0.35rem;padding:0.5rem 0.85rem 0.5rem 1rem;border-radius:0 0 10px 10px;line-height:1.55;border-left:3px solid transparent;}
+.quiz-explain.show-correct{display:block;background:rgba(22,163,74,0.07);color:#166534;border-left-color:#16a34a;}
+.quiz-explain.show-wrong{display:block;background:rgba(220,38,38,0.06);color:#991b1b;border-left-color:#dc2626;}
+.quiz-explain.show-reveal{display:block;background:rgba(37,99,235,0.06);color:#1e40af;border-left-color:#2563eb;}
+.quiz-feedback{display:none;margin-top:1rem;padding:0.85rem 1.1rem;border-radius:12px;font-weight:700;font-size:0.95rem;align-items:center;gap:0.6rem;}
+.quiz-feedback.show{display:flex;animation:fadeIn 0.35s;}
+.quiz-feedback.win{background:linear-gradient(135deg,#f0fdf4,#dcfce7);color:#14532d;border:1px solid rgba(22,163,74,0.3);}
+.quiz-feedback.lose{background:linear-gradient(135deg,#fef2f2,#fee2e2);color:#991b1b;border:1px solid rgba(220,38,38,0.2);}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+/* FOOTER */
+.gfooter{background:#fef9e7;border-top:1px solid var(--border);padding:3rem 0;margin-top:4rem;text-align:center;}
+.gfooter-logo{font-family:var(--font-head);font-weight:800;font-size:1.4rem;background:linear-gradient(135deg,var(--neon-amber),var(--neon-orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.5rem;}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-up.visible{opacity:1;transform:none;}
+@media(max-width:768px){.hero h1{font-size:2rem;}.hero-orbit{display:none;}.level-card{padding:1.5rem;}.xp-badges{display:none;}}
+
+/* TOAST */
+.toast-container{position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;display:flex;flex-direction:column;gap:0.5rem;pointer-events:none;}
+.gtoast{background:#ffffff;border:1px solid var(--border2);border-radius:14px;padding:0.85rem 1.2rem;display:flex;align-items:center;gap:0.75rem;backdrop-filter:blur(12px);font-weight:700;font-size:0.88rem;transform:translateX(120%);transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);pointer-events:auto;min-width:260px;box-shadow:0 8px 32px rgba(217,119,6,0.15);}
+.gtoast.show{transform:none;}
+.gtoast-icon{font-size:1.4rem;}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:10000;background:rgba(15,23,42,0.55);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity 0.4s ease;}
+.modal-overlay.open{opacity:1;pointer-events:auto;}
+.modal-box{background:#ffffff;border-radius:28px;padding:2.5rem 2.5rem 2rem;max-width:520px;width:100%;position:relative;overflow:hidden;box-shadow:0 24px 80px rgba(217,119,6,0.18),0 4px 20px rgba(0,0,0,0.1);transform:scale(0.85) translateY(20px);transition:transform 0.45s cubic-bezier(0.34,1.56,0.64,1),opacity 0.4s ease;opacity:0;}
+.modal-overlay.open .modal-box{transform:scale(1) translateY(0);opacity:1;}
+.modal-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--neon-amber),var(--neon-orange),var(--neon-pink));}
+.modal-close{position:absolute;top:1rem;right:1rem;background:#f3f4f6;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:0.9rem;color:#6b7280;display:flex;align-items:center;justify-content:center;transition:0.2s;}
+.modal-close:hover{background:#e5e7eb;color:#374151;}
+.modal-trophy{font-size:3rem;text-align:center;margin-bottom:0.5rem;}
+.modal-title{font-family:var(--font-head);font-weight:800;font-size:1.6rem;text-align:center;color:var(--text);margin-bottom:0.4rem;}
+.modal-subtitle{color:var(--muted);text-align:center;font-size:0.92rem;margin-bottom:1.5rem;}
+.score-ring-wrap{display:flex;justify-content:center;margin-bottom:1.2rem;}
+.score-ring{position:relative;width:120px;height:120px;}
+.score-ring svg{width:120px;height:120px;transform:rotate(-90deg);}
+.ring-bg{fill:none;stroke:#e5e7eb;stroke-width:10;}
+.ring-fill{fill:none;stroke:#d97706;stroke-width:10;stroke-linecap:round;stroke-dasharray:327;stroke-dashoffset:327;transition:stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1);}
+.ring-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.ring-num{font-family:var(--font-head);font-weight:800;font-size:1.4rem;color:var(--text);line-height:1;}
+.ring-label{font-size:0.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px;}
+.grade-card{border-radius:14px;padding:0.85rem 1.2rem;margin-bottom:1.2rem;display:flex;align-items:center;gap:1rem;border:1.5px solid;}
+.grade-s{background:#fef9c3;border-color:#b45309;}.grade-a{background:#f0fdf4;border-color:#16a34a;}.grade-b{background:#eff6ff;border-color:#2563eb;}.grade-c{background:#fdf4ff;border-color:#7c3aed;}.grade-d{background:#fef2f2;border-color:#dc2626;}
+.grade-letter{font-family:var(--font-head);font-weight:800;font-size:1.6rem;}
+.grade-msg{font-size:0.9rem;color:var(--muted);font-weight:600;}
+.modal-xp-row{display:flex;align-items:center;justify-content:space-between;background:#fef9e7;border:1px solid rgba(217,119,6,0.2);border-radius:12px;padding:0.75rem 1.1rem;margin-bottom:1.4rem;}
+.modal-xp-row .mxp-label{font-size:0.85rem;color:#6b7280;font-weight:600;}
+.modal-xp-row .mxp-val{font-family:var(--font-head);font-weight:800;font-size:1.1rem;background:linear-gradient(135deg,#d97706,#c2410c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.modal-btns{display:flex;gap:0.75rem;}
+.modal-btn-retry{flex:1;padding:0.8rem 1rem;background:#f3f4f6;border:1.5px solid #e5e7eb;border-radius:12px;cursor:pointer;font-family:var(--font-head);font-weight:700;font-size:0.92rem;color:#374151;transition:0.2s;display:flex;align-items:center;justify-content:center;gap:0.5rem;}
+.modal-btn-retry:hover{background:#e5e7eb;color:#111827;}
+.modal-btn-continue{flex:2;padding:0.8rem 1rem;background:linear-gradient(135deg,#d97706,#c2410c);border:none;border-radius:12px;cursor:pointer;font-family:var(--font-head);font-weight:700;font-size:0.92rem;color:#ffffff;transition:0.2s;display:flex;align-items:center;justify-content:center;gap:0.5rem;box-shadow:0 4px 16px rgba(217,119,6,0.3);}
+.modal-btn-continue:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(217,119,6,0.45);}
+#confettiCanvas{position:fixed;inset:0;z-index:10001;pointer-events:none;}
+</style>
+</head>
+<body>
+
+<!-- XP STRIP -->
+<div class="xp-strip">
+  <div class="container-main">
+    <div class="xp-inner">
+      <span class="xp-label">⚡ XP</span>
+      <div class="xp-bar-wrap"><div class="xp-bar-fill" id="xpFill"></div></div>
+      <span class="xp-score" id="xpScore">0 / 275 XP</span>
+      <div class="xp-badges">
+        <span class="xp-badge b1" id="badge1">📊 Stats Initiate</span>
+        <span class="xp-badge b2" id="badge2">🗃️ Data Detective</span>
+        <span class="xp-badge b3" id="badge3">🔢 Type Master</span>
+        <span class="xp-badge b4" id="badge4">📈 Graph Guru</span>
+        <span class="xp-badge b5" id="badge5">🎯 Sampling Pro</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container-main">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="hero-eyebrow"><i class="fa-solid fa-gamepad me-1"></i> Gamified Learning Quest</div>
+        <h1>
+          <span class="line1">Data Science ki Neenv —</span>
+          <span class="line2">Statistics &amp; Mathematics!</span>
+        </h1>
+        <p class="hero-sub">
+          5 boss levels. Statistics kya hai se lekar Population vs Sample tak. Real India examples ke saath. <strong style="color:var(--text)">Earn XP</strong>, unlock badges, aur Data Science ki mathematical foundation rock-solid banao!
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat-item"><div class="hero-stat-num">5</div><div class="hero-stat-label">Boss Topics</div></div>
+          <div class="hero-stat-item"><div class="hero-stat-num">275</div><div class="hero-stat-label">Total XP</div></div>
+          <div class="hero-stat-item"><div class="hero-stat-num">5</div><div class="hero-stat-label">Badges</div></div>
+          <div class="hero-stat-item"><div class="hero-stat-num">∞</div><div class="hero-stat-label">Insights</div></div>
+        </div>
+        <a href="#s1" class="hero-cta"><i class="fa-solid fa-play me-1"></i> Start Your Quest</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="hero-orbit">
+          <div class="orbit-ring"><div class="orbit-dot"></div></div>
+          <div class="orbit-ring"><div class="orbit-dot"></div></div>
+          <div class="orbit-ring"><div class="orbit-dot"></div></div>
+          <div class="orbit-center">📊</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container-main">
+
+<!-- QUEST MAP -->
+<div class="quest-map fade-up">
+  <div class="quest-map-title"><i class="fa-solid fa-map me-2"></i> Quest Map</div>
+  <div class="quest-grid">
+    <a href="#s1" class="quest-item"><span class="quest-num" style="background:rgba(217,119,6,0.15);color:var(--neon-amber);">L1</span> Statistics Kya Hai? Use Cases</a>
+    <a href="#s2" class="quest-item"><span class="quest-num" style="background:rgba(194,65,12,0.15);color:var(--neon-orange);">L2</span> Data in Statistics &amp; Applications</a>
+    <a href="#s3" class="quest-item"><span class="quest-num" style="background:rgba(180,83,9,0.15);color:var(--neon-gold);">L3</span> Types of Data — Numerical vs Categorical</a>
+    <a href="#s4" class="quest-item"><span class="quest-num" style="background:rgba(37,99,235,0.15);color:var(--neon-blue);">L4</span> Representation of Data — Graphs</a>
+    <a href="#s5" class="quest-item"><span class="quest-num" style="background:rgba(22,163,74,0.15);color:var(--neon-green);">L5</span> Population vs Sample</a>
+    <a href="#s6" class="quest-item"><span class="quest-num" style="background:rgba(219,39,119,0.15);color:var(--neon-pink);">🏆</span> Final Summary &amp; Roadmap</a>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████████
+     LEVEL 1 : STATISTICS KYA HAI?
+█████████████████████████████████████ -->
+<div class="level-card lvl-amber fade-up" id="s1">
+  <div class="corner-deco">LEVEL 1</div>
+  <div class="lv-header">
+    <div class="lv-icon-wrap ico-amber"><i class="fa-solid fa-chart-simple"></i></div>
+    <div class="lv-meta">
+      <div class="lv-eyebrow">Level 1 · Boss Topic</div>
+      <div class="lv-title">Statistics Kya Hai aur Data Science Mein Kyun Zaroori?</div>
+      <div class="lv-xp"><i class="fa-solid fa-star"></i> +30 XP on scroll</div>
+    </div>
+  </div>
+
+  <div class="callout cb-amber">
+    <div class="ct"><i class="fa-solid fa-lightbulb"></i> Definition — Statistics Ek Line Mein</div>
+    <strong>Statistics</strong> = data <span class="hl-amber">collect, organize, analyze, interpret, aur present</span> karne ka science — taaki meaningful decisions liye ja sakein.<br><br>
+    Jaise ek doctor patient ke test results dekhta hai aur diagnosis karta hai — Statistics data se insights nikalane ka wahi kaam karta hai, lekin mathematical tools ke saath!
+  </div>
+
+  <div class="callout cb-blue mt-2">
+    <div class="ct"><i class="fa-solid fa-code-branch"></i> Statistics ki Do Main Branches</div>
+    <div class="row g-2 mt-1">
+      <div class="col-md-6">
+        <div style="background:rgba(37,99,235,0.05);border:1px solid rgba(37,99,235,0.2);border-radius:12px;padding:1rem;">
+          <div style="font-family:var(--font-head);font-weight:800;color:var(--neon-blue);margin-bottom:0.4rem;">📐 Descriptive Statistics</div>
+          Data ko <strong>summarize aur describe</strong> karna — jo data hamare paas hai usse samjhao.<br>
+          <em style="font-size:0.84rem;color:var(--muted);">Mean, Median, Mode, Standard Deviation, Graphs, Charts</em>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div style="background:rgba(124,58,237,0.05);border:1px solid rgba(124,58,237,0.2);border-radius:12px;padding:1rem;">
+          <div style="font-family:var(--font-head);font-weight:800;color:var(--neon-purple);margin-bottom:0.4rem;">🔮 Inferential Statistics</div>
+          Sample se <strong>population ke baare mein conclusions</strong> nikalna — chhote data se bada conclusion.<br>
+          <em style="font-size:0.84rem;color:var(--muted);">Hypothesis Testing, Confidence Intervals, Regression, p-value</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="glow-div"></div>
+
+  <h5 style="font-family:var(--font-head);font-weight:800;color:var(--text);margin-bottom:1.2rem;">
+    <i class="fa-solid fa-database me-2" style="color:var(--neon-amber)"></i>Statistics ke Use Cases — Data Science Mein
+  </h5>
+
+  <div class="row g-3">
+    <div class="col-md-4 col-sm-6">
+      <div class="ach-card ac-amber">
+        <span class="ach-icon">🔍</span>
+        <div class="ach-title">EDA (Exploratory Analysis)</div>
+        <div class="ach-desc">Data mein patterns, distributions, aur anomalies dhundho — model banane se pehle data samjho.<br><em style="font-size:0.78rem;">Mean, median, std, histograms</em></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="ach-card ac-orange">
+        <span class="ach-icon">🧪</span>
+        <div class="ach-title">A/B Testing</div>
+        <div class="ach-desc">Do versions compare karo — kaunsa feature/design better perform karta hai? Statistical significance decide karo.<br><em style="font-size:0.78rem;">Hypothesis testing, p-value</em></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="ach-card ac-gold">
+        <span class="ach-icon">🤖</span>
+        <div class="ach-title">ML Model Building</div>
+        <div class="ach-desc">Features select karo, model evaluate karo, overfitting samjho — sab statistics pe based hai.<br><em style="font-size:0.78rem;">Correlation, regression, variance</em></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="ach-card ac-blue">
+        <span class="ach-icon">📉</span>
+        <div class="ach-title">Risk Assessment</div>
+        <div class="ach-desc">Business decisions mein risk calculate karo — probability aur distributions use karo.<br><em style="font-size:0.78rem;">Probability distributions, confidence intervals</em></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="ach-card ac-green">
+        <span class="ach-icon">🏥</span>
+        <div class="ach-title">Clinical Trials &amp; Research</div>
+        <div class="ach-desc">Naye treatments kitne effective hain — statistical tests se prove karo scientifically.<br><em style="font-size:0.78rem;">t-test, chi-square, ANOVA</em></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="ach-card ac-pink">
+        <span class="ach-icon">📦</span>
+        <div class="ach-title">Quality Control</div>
+        <div class="ach-desc">Manufacturing defects measure karo — kab process control mein hai kab nahi.<br><em style="font-size:0.78rem;">Control charts, sampling, Sigma</em></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout cb-gold mt-4">
+    <div class="ct"><i class="fa-solid fa-india"></i> Real India Examples — Statistics Hamare Aaspaas</div>
+    <div class="row g-2">
+      <div class="col-md-6">
+        🗳️ <strong>Election Exit Polls:</strong> Puri population se sample lekar result predict karna<br>
+        📊 <strong>SEBI Market Analysis:</strong> Stock price movements aur volatility measure karna<br>
+        🌾 <strong>Crop Yield Prediction:</strong> Historical weather + yield data se future estimate
+      </div>
+      <div class="col-md-6">
+        🏥 <strong>ICMR COVID Studies:</strong> Vaccine effectiveness statistical trials se prove ki<br>
+        📱 <strong>Jio Network:</strong> User experience measure — average speed, uptime statistics<br>
+        💰 <strong>RBI Inflation:</strong> CPI basket of goods se inflation rate calculate
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ 1 -->
+  <div class="quiz-box" data-quiz="1" data-correct="c" data-xp="25">
+    <div class="quiz-q">🤔 Ek Data Scientist ne 1000 Flipkart customers ka purchase data analyze kiya aur discover kiya ki "average order value ₹850 hai, with std deviation ₹220". Ye kaunsi statistics hai?</div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-ans="a" data-explain="Nahi. Inferential statistics tab use hoti hai jab hum sample se poori population ke baare mein conclusions nikalte hain — jaise 'ye 1000 customers se pata chalta hai ki saare Flipkart users ka average ₹850 hai'. Yahan sirf us data ka summary diya gaya hai."><span class="opt-letter">A</span>Inferential Statistics — sample se population ke conclusions nikaale gaye</div>
+      <div class="quiz-opt" data-ans="b" data-explain="Galat. Probability theory alag concept hai — events ke chances calculate karna. Yahan koi probability calculate nahi ki gayi hai, sirf data summarize kiya gaya hai."><span class="opt-letter">B</span>Probability Theory — events ke chances measure kiye gaye</div>
+      <div class="quiz-opt" data-ans="c" data-explain="Bilkul sahi! Ye Descriptive Statistics hai. Average (mean) aur Standard Deviation — ye dono descriptive statistics ke tools hain jo existing data ko summarize aur describe karte hain. '1000 customers ka average order ₹850' — ye describe kar raha hai jo data hamare paas hai, koi inference ya prediction nahi."><span class="opt-letter">C</span>Descriptive Statistics — existing data ka summary aur description</div>
+      <div class="quiz-opt" data-ans="d" data-explain="Nahi. Machine Learning ek alag broader field hai. Statistics ML ki foundation hai lekin ye specifically koi ML model nahi ban raha — sirf data describe ho raha hai."><span class="opt-letter">D</span>Machine Learning — pattern prediction kiya gaya</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████████
+     LEVEL 2 : DATA IN STATISTICS
+█████████████████████████████████████ -->
+<div class="level-card lvl-orange fade-up" id="s2">
+  <div class="corner-deco">LEVEL 2</div>
+  <div class="lv-header">
+    <div class="lv-icon-wrap ico-orange"><i class="fa-solid fa-database"></i></div>
+    <div class="lv-meta">
+      <div class="lv-eyebrow">Level 2 · Boss Topic</div>
+      <div class="lv-title">Data in Statistics — Applications &amp; Scales of Measurement</div>
+      <div class="lv-xp"><i class="fa-solid fa-star"></i> +30 XP on scroll</div>
+    </div>
+  </div>
+
+  <div class="callout cb-orange">
+    <div class="ct"><i class="fa-solid fa-lightbulb"></i> Data kya hai — Statistics ke Nazariye Se</div>
+    <strong>Data</strong> = kisi bhi cheez ke baare mein collected <span class="hl-amber">facts, figures, aur observations</span> — raw form mein. Statistics in raw observations ko meaningful information mein convert karta hai.<br><br>
+    Data woh raw material hai jis pe statistics kaam karta hai — jaise atta maida hai aur statistics woh baker jo roti banata hai!
+  </div>
+
+  <div class="glow-div"></div>
+
+  <h5 style="font-family:var(--font-head);font-weight:800;color:var(--text);margin-bottom:1.2rem;">
+    <i class="fa-solid fa-ruler me-2" style="color:var(--neon-orange)"></i>Measurement ke 4 Scales — Data ko Measure Kaise Karein?
+  </h5>
+
+  <div class="step-timeline">
+    <div class="step-item" data-step="1">
+      <div class="step-label">📝 Nominal Scale — Sirf Names, Koi Order Nahi</div>
+      <div class="step-body">
+        Categories jin mein <strong>koi ranking ya order nahi</strong> — sirf labels. Math operations (mean, etc.) nahi kar sakte.<br>
+        <span class="stat-pill sp-amber" style="margin:0.2rem 0.2rem 0 0;">Blood Group: A, B, AB, O</span>
+        <span class="stat-pill sp-amber" style="margin:0.2rem 0.2rem 0 0;">Gender: Male, Female</span>
+        <span class="stat-pill sp-amber" style="margin:0.2rem;">City: Mumbai, Delhi, Pune</span><br>
+        <em style="color:var(--dim);">🇮🇳 India: Religion (Hindu/Muslim/Sikh), State names, Pincode (digits hain lekin math nahi hota!)</em>
+      </div>
+    </div>
+    <div class="step-item" data-step="2">
+      <div class="step-label">🏆 Ordinal Scale — Order Hai, Lekin Gap Equal Nahi</div>
+      <div class="step-body">
+        Categories mein <strong>meaningful ranking</strong> hai — lekin differences equal nahi hain. "1st aur 2nd position ka gap" = "2nd aur 3rd ka gap" nahi necessarily.<br>
+        <span class="stat-pill sp-orange" style="margin:0.2rem 0.2rem 0 0;">Education: School &lt; Graduate &lt; Post-Grad</span>
+        <span class="stat-pill sp-orange" style="margin:0.2rem;">Satisfaction: Poor &lt; Good &lt; Excellent</span><br>
+        <em style="color:var(--dim);">🇮🇳 India: CIBIL rating (Poor/Fair/Good/Very Good), Army rank, UPSC merit list</em>
+      </div>
+    </div>
+    <div class="step-item" data-step="3">
+      <div class="step-label">📏 Interval Scale — Equal Gaps, Lekin Koi True Zero Nahi</div>
+      <div class="step-body">
+        Order hai, gaps equal hain — lekin <strong>zero "kuch nahi" nahi mean karta</strong>. Ratios meaningful nahi. Addition/subtraction ho sakti hai, division nahi.<br>
+        <span class="stat-pill sp-gold" style="margin:0.2rem 0.2rem 0 0;">Temperature: 0°C ≠ "no temperature"</span>
+        <span class="stat-pill sp-gold" style="margin:0.2rem;">IQ Score: 0 IQ nahi hota</span><br>
+        <em style="color:var(--dim);">🇮🇳 India: Year (2020-2024 difference = 4 years, lekin 2024 ÷ 2020 meaningless). Calendar dates.</em>
+      </div>
+    </div>
+    <div class="step-item" data-step="4">
+      <div class="step-label">⚖️ Ratio Scale — Sabse Complete! True Zero Hai</div>
+      <div class="step-body">
+        Order, equal gaps, aur <strong>absolute zero</strong> — sab available! Sab math operations ho sakti hain — +, -, ×, ÷.<br>
+        <span class="stat-pill sp-green" style="margin:0.2rem 0.2rem 0 0;">Weight: 0 kg = no weight</span>
+        <span class="stat-pill sp-green" style="margin:0.2rem 0.2rem 0 0;">Income: ₹0 = no income</span>
+        <span class="stat-pill sp-green" style="margin:0.2rem;">Height, Age, Distance</span><br>
+        <em style="color:var(--dim);">🇮🇳 India: Crop yield (tonnes), GDP (₹), Population count, Sensex points</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout cb-green mt-3">
+    <div class="ct"><i class="fa-solid fa-star"></i> Applications of Statistics in Different Fields</div>
+    <div class="table-responsive mt-1">
+      <table class="gtbl">
+        <thead><tr><th>Field</th><th>Statistics ka Use</th><th>India Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Government</strong></td><td>Census, policy decisions, budget allocation</td><td>Bharat ki 2011 Census — 1.2 billion pe statistics</td></tr>
+          <tr><td><strong>Healthcare</strong></td><td>Drug trials, disease spread, mortality rates</td><td>AIIMS ke COVID vaccine trials — statistical evidence</td></tr>
+          <tr><td><strong>Business</strong></td><td>Market research, customer analysis, quality control</td><td>Tata Motors — defect rate minimize karna Six Sigma se</td></tr>
+          <tr><td><strong>Finance</strong></td><td>Risk modeling, portfolio optimization, credit scoring</td><td>HDFC Bank — loan default probability predict karna</td></tr>
+          <tr><td><strong>Education</strong></td><td>Exam score analysis, performance tracking</td><td>CBSE — student performance trends over years</td></tr>
+          <tr><td><strong>Sports</strong></td><td>Player performance, match prediction, fitness</td><td>IPL analytics — batting average, strike rate, economy rate</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- QUIZ 2 -->
+  <div class="quiz-box" data-quiz="2" data-correct="b" data-xp="25">
+    <div class="quiz-q">🤔 Zomato apne restaurant ratings collect karta hai: 1 star, 2 star, 3 star, 4 star, 5 star. Yeh measurement scale kaunsa hai?</div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-ans="a" data-explain="Nahi. Nominal scale mein koi order ya ranking nahi hoti — sirf labels. Zomato ratings mein clear order hai: 1 star &lt; 2 star &lt; 5 star. Isliye nominal nahi."><span class="opt-letter">A</span>Nominal — sirf categories hain, koi order nahi</div>
+      <div class="quiz-opt" data-ans="b" data-explain="Bilkul sahi! Ye Ordinal scale hai. Ratings mein clear ranking hai (1 &lt; 2 &lt; 3 &lt; 4 &lt; 5), lekin kya 5-star aur 4-star ka gap exactly 3-star aur 2-star ke gap ke barabar hai? Nahi necessarily! Ek customer ke liye 5 aur 4 ka farak bahut bada ho sakta hai, dusre ke liye chota. Equal intervals guarantee nahi hain, isliye Interval ya Ratio nahi — Ordinal hai."><span class="opt-letter">B</span>Ordinal — order hai (1&lt;2&lt;3&lt;4&lt;5) lekin gaps equal nahi guarantee</div>
+      <div class="quiz-opt" data-ans="c" data-explain="Nahi. Interval scale ke liye equal gaps hone chahiye aur true zero nahi hona chahiye. Ratings mein true zero ka koi matlab nahi (0-star restaurant = non-existent), lekin equal gaps guarantee nahi hain. Ratings ordinal hain."><span class="opt-letter">C</span>Interval — equal gaps hain, true zero nahi</div>
+      <div class="quiz-opt" data-ans="d" data-explain="Nahi. Ratio scale ke liye true zero hona chahiye — zero ka meaningful interpretation. Restaurant rating zero technically 'koi rating nahi' hai, aur equal intervals nahi hain. Ratio scale mein weight=0 ya income=0 jaisi cheezein hoti hain."><span class="opt-letter">D</span>Ratio — true zero hai, sab math operations ho sakti hain</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████████
+     LEVEL 3 : TYPES OF DATA
+█████████████████████████████████████ -->
+<div class="level-card lvl-gold fade-up" id="s3">
+  <div class="corner-deco">LEVEL 3</div>
+  <div class="lv-header">
+    <div class="lv-icon-wrap ico-gold"><i class="fa-solid fa-table-list"></i></div>
+    <div class="lv-meta">
+      <div class="lv-eyebrow">Level 3 · Boss Topic</div>
+      <div class="lv-title">Types of Data — Numerical aur Categorical</div>
+      <div class="lv-xp"><i class="fa-solid fa-star"></i> +30 XP on scroll</div>
+    </div>
+  </div>
+
+  <div class="callout cb-gold">
+    <div class="ct"><i class="fa-solid fa-lightbulb"></i> Data ke 2 Main Types</div>
+    Sab data do main buckets mein aata hai: <span class="hl-blue">Numerical (Quantitative)</span> — jinse math operations ho sakti hain, aur <span class="hl-pink">Categorical (Qualitative)</span> — jo groups ya labels represent karte hain.
+  </div>
+
+  <!-- Full Data Type Tree -->
+  <div class="row g-3 mt-2">
+    <!-- Numerical -->
+    <div class="col-md-6">
+      <div class="dim-card" style="border-color:rgba(37,99,235,0.3);border-width:2px;">
+        <div class="dim-rank" style="color:var(--neon-blue);">🔢</div>
+        <div class="dim-name" style="color:var(--neon-blue);font-size:1.15rem;">Numerical (Quantitative) Data</div>
+        <div class="dim-desc"><strong>Numbers jo mathematically meaningful hain</strong> — add, subtract, average sab hota hai. Do subtypes:</div>
+
+        <div style="background:rgba(37,99,235,0.05);border:1px solid rgba(37,99,235,0.2);border-radius:12px;padding:0.9rem;margin-bottom:0.75rem;">
+          <div style="font-weight:800;color:var(--neon-blue);margin-bottom:0.3rem;">📐 Continuous</div>
+          <div style="font-size:0.86rem;color:var(--muted);">Koi bhi value le sakta hai — infinite possibilities between two numbers. Measurement se milta hai.<br>
+          <strong>Examples:</strong> Height (172.3 cm), Weight (68.7 kg), Temperature (36.5°C), Speed, Rainfall<br>
+          <em>🇮🇳 Baarish ka measurement: 23.4 mm, 78.2 mm</em></div>
+        </div>
+
+        <div style="background:rgba(124,58,237,0.05);border:1px solid rgba(124,58,237,0.2);border-radius:12px;padding:0.9rem;">
+          <div style="font-weight:800;color:var(--neon-purple);margin-bottom:0.3rem;">🔢 Discrete</div>
+          <div style="font-size:0.86rem;color:var(--muted);">Sirf specific values — counting se milta hai. Fractions meaningful nahi hote.<br>
+          <strong>Examples:</strong> No. of children (0, 1, 2...), Roll number, Goals scored, Rooms in house<br>
+          <em>🇮🇳 IPL runs: 0, 1, 2, 4, 6 — 3.5 runs nahi hote!</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categorical -->
+    <div class="col-md-6">
+      <div class="dim-card" style="border-color:rgba(219,39,119,0.3);border-width:2px;">
+        <div class="dim-rank" style="color:var(--neon-pink);">🏷️</div>
+        <div class="dim-name" style="color:var(--neon-pink);font-size:1.15rem;">Categorical (Qualitative) Data</div>
+        <div class="dim-desc"><strong>Groups ya categories represent karte hain</strong> — math operations meaningless hain. Do subtypes:</div>
+
+        <div style="background:rgba(219,39,119,0.05);border:1px solid rgba(219,39,119,0.2);border-radius:12px;padding:0.9rem;margin-bottom:0.75rem;">
+          <div style="font-weight:800;color:var(--neon-pink);margin-bottom:0.3rem;">🔀 Nominal</div>
+          <div style="font-size:0.86rem;color:var(--muted);">No ordering — sirf labels. Koi bhi category "better" ya "greater" nahi.<br>
+          <strong>Examples:</strong> Gender, Color, City, Religion, Blood Group, Product category<br>
+          <em>🇮🇳 Zomato cuisine: Indian, Chinese, Italian — koi rank nahi!</em></div>
+        </div>
+
+        <div style="background:rgba(180,83,9,0.05);border:1px solid rgba(180,83,9,0.2);border-radius:12px;padding:0.9rem;">
+          <div style="font-weight:800;color:var(--neon-gold);margin-bottom:0.3rem;">📊 Ordinal</div>
+          <div style="font-size:0.86rem;color:var(--muted);">Meaningful order/ranking — lekin gaps equal nahi guarantee.<br>
+          <strong>Examples:</strong> Education level, Satisfaction rating, Army rank, T-shirt size (S/M/L/XL)<br>
+          <em>🇮🇳 CIBIL score category: Poor &lt; Fair &lt; Good &lt; Excellent</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout cb-amber mt-3">
+    <div class="ct"><i class="fa-solid fa-triangle-exclamation"></i> Common Confusion — Number ka matlab Numerical nahi hota!</div>
+    <div class="row g-2">
+      <div class="col-md-6">
+        ❌ <strong>Pincode:</strong> 400001, 110001 — ye numbers hain lekin <span class="hl-red">Categorical (Nominal)</span> hai! 400001 + 110001 = meaningless.<br>
+        ❌ <strong>Phone Number:</strong> Digits hain lekin add karna meaningless — Nominal.<br>
+        ❌ <strong>Jersey Number:</strong> Rohit Sharma #45 — Categorical Nominal.
+      </div>
+      <div class="col-md-6">
+        ✅ <strong>Test Score:</strong> 85 marks — <span class="hl-green">Numerical (Discrete)</span> — average nikal sakte ho.<br>
+        ✅ <strong>Temperature:</strong> 38.5°C — Numerical (Continuous) — meaningful math.<br>
+        ✅ <strong>Number of Orders:</strong> 5 orders — Numerical (Discrete).
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ 3 -->
+  <div class="quiz-box" data-quiz="3" data-correct="d" data-xp="25">
+    <div class="quiz-q">🤔 Ek Swiggy dataset mein ye columns hain: (1) order_amount ₹350, (2) delivery_time 28 minutes, (3) restaurant_city "Mumbai", (4) rating "4 stars", (5) num_items 3. Continuous numerical data kaunsa/kaun se column(s) hai/hain?</div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-ans="a" data-explain="Nahi. order_amount aur delivery_time dono numerical hain, lekin discrete ya continuous? order_amount (₹350.50 bhi ho sakta hai) continuous ho sakta hai. Lekin delivery_time (minutes mein usually whole numbers) discrete bhi ho sakta hai. Aur sirf ye dono sahi answer nahi hai — question mein continuous specifically puchha gaya hai."><span class="opt-letter">A</span>order_amount aur delivery_time — dono numerical hain</div>
+      <div class="quiz-opt" data-ans="b" data-explain="Nahi. restaurant_city 'Mumbai' clearly Categorical Nominal hai — koi math nahi ho sakta. Aur rating '4 stars' Ordinal Categorical hai. Ye dono definitely continuous numerical nahi hain."><span class="opt-letter">B</span>restaurant_city aur rating — ye measure kiye gaye hain</div>
+      <div class="quiz-opt" data-ans="c" data-explain="Nahi. num_items (3) Discrete Numerical hai — 3 items, 5 items — whole numbers, fractions nahi. Aur rating '4 stars' Ordinal Categorical hai."><span class="opt-letter">C</span>num_items aur rating — dono ordered hain</div>
+      <div class="quiz-opt" data-ans="d" data-explain="Bilkul sahi! order_amount (₹350.75 bhi ho sakta hai — infinite precision) aur delivery_time (28.5 minutes bhi possible) dono Continuous Numerical hain — ye theoretically koi bhi real value le sakte hain within a range. num_items=3 Discrete (sirf whole numbers). restaurant_city Nominal Categorical. rating Ordinal Categorical."><span class="opt-letter">D</span>order_amount aur delivery_time — ye koi bhi real value le sakte hain (continuous)</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████████
+     LEVEL 4 : REPRESENTATION OF DATA
+█████████████████████████████████████ -->
+<div class="level-card lvl-blue fade-up" id="s4">
+  <div class="corner-deco">LEVEL 4</div>
+  <div class="lv-header">
+    <div class="lv-icon-wrap ico-blue"><i class="fa-solid fa-chart-bar"></i></div>
+    <div class="lv-meta">
+      <div class="lv-eyebrow">Level 4 · Boss Topic</div>
+      <div class="lv-title">Representation of Data — Graphs aur Patterns</div>
+      <div class="lv-xp"><i class="fa-solid fa-star"></i> +30 XP on scroll</div>
+    </div>
+  </div>
+
+  <div class="callout cb-blue">
+    <div class="ct"><i class="fa-solid fa-lightbulb"></i> "A picture is worth a thousand numbers"</div>
+    Raw numbers se patterns samajhna mushkil hota hai — lekin sahi graph se wo pattern instantly visible ho jaata hai. Data visualization ek essential statistics skill hai — aur Data Science mein EDA ka sabse important hissa!
+  </div>
+
+  <div class="glow-div"></div>
+
+  <!-- BAR CHART visualization -->
+  <h5 style="font-family:var(--font-head);font-weight:800;color:var(--text);margin-bottom:1rem;"><i class="fa-solid fa-chart-column me-2" style="color:var(--neon-amber)"></i>1. Bar Chart — Categorical Comparison</h5>
+  <div class="callout cb-amber" style="margin-bottom:0.5rem;">
+    <div class="ct"><i class="fa-solid fa-info-circle"></i> Kab Use Karein</div>
+    <strong>Categorical data compare karna</strong> — kaunsi category mein zyada/kam value hai. Discrete data ke liye perfect.<br>
+    <em>🇮🇳 Example: Different cities mein average Ola ride distance</em>
+  </div>
+  <div class="chart-wrap">
+    <div class="chart-title">🚗 Average Ola Ride Distance by City (km)</div>
+    <div class="bar-chart">
+      <div class="bar-col"><div class="bar-val">8.2</div><div class="bar-fill" style="height:82%;background:linear-gradient(180deg,#f59e0b,#d97706);"></div><div class="bar-label">Mumbai</div></div>
+      <div class="bar-col"><div class="bar-val">11.5</div><div class="bar-fill" style="height:100%;background:linear-gradient(180deg,#f59e0b,#d97706);"></div><div class="bar-label">Delhi</div></div>
+      <div class="bar-col"><div class="bar-val">7.8</div><div class="bar-fill" style="height:68%;background:linear-gradient(180deg,#f59e0b,#d97706);"></div><div class="bar-label">Bangalore</div></div>
+      <div class="bar-col"><div class="bar-val">9.1</div><div class="bar-fill" style="height:79%;background:linear-gradient(180deg,#f59e0b,#d97706);"></div><div class="bar-label">Hyderabad</div></div>
+      <div class="bar-col"><div class="bar-val">6.5</div><div class="bar-fill" style="height:57%;background:linear-gradient(180deg,#f59e0b,#d97706);"></div><div class="bar-label">Chennai</div></div>
+      <div class="bar-col"><div class="bar-val">10.3</div><div class="bar-fill" style="height:90%;background:linear-gradient(180deg,#f59e0b,#d97706);"></div><div class="bar-label">Pune</div></div>
+    </div>
+    <div style="font-size:0.76rem;color:var(--dim);margin-top:0.4rem;">↑ Delhi mein sabse zyada average distance — city ka spread bada hai!</div>
+  </div>
+
+  <!-- HISTOGRAM -->
+  <h5 style="font-family:var(--font-head);font-weight:800;color:var(--text);margin:1.5rem 0 1rem;"><i class="fa-solid fa-chart-area me-2" style="color:var(--neon-orange)"></i>2. Histogram — Numerical Distribution</h5>
+  <div class="callout cb-orange" style="margin-bottom:0.5rem;">
+    <div class="ct"><i class="fa-solid fa-info-circle"></i> Kab Use Karein</div>
+    <strong>Continuous numerical data ka distribution</strong> dekhna — data symmetrical hai ya skewed? Outliers hain?<br>
+    Bar chart se fark: Histogram mein bars touch karte hain (continuous data), bar chart mein gap hota hai.<br>
+    <em>🇮🇳 Example: Flipkart delivery time distribution</em>
+  </div>
+  <div class="chart-wrap">
+    <div class="chart-title">📦 Flipkart Delivery Time Distribution (hours)</div>
+    <div class="bar-chart">
+      <div class="bar-col"><div class="bar-val">5%</div><div class="bar-fill" style="height:15%;background:linear-gradient(180deg,#fb923c,#c2410c);border-radius:0;"></div><div class="bar-label">0–12h</div></div>
+      <div class="bar-col"><div class="bar-val">28%</div><div class="bar-fill" style="height:56%;background:linear-gradient(180deg,#fb923c,#c2410c);border-radius:0;"></div><div class="bar-label">12–24h</div></div>
+      <div class="bar-col"><div class="bar-val">50%</div><div class="bar-fill" style="height:100%;background:linear-gradient(180deg,#fb923c,#c2410c);border-radius:0;"></div><div class="bar-label">24–48h</div></div>
+      <div class="bar-col"><div class="bar-val">12%</div><div class="bar-fill" style="height:24%;background:linear-gradient(180deg,#fb923c,#c2410c);border-radius:0;"></div><div class="bar-label">48–72h</div></div>
+      <div class="bar-col"><div class="bar-val">3%</div><div class="bar-fill" style="height:6%;background:linear-gradient(180deg,#fb923c,#c2410c);border-radius:0;"></div><div class="bar-label">72–96h</div></div>
+      <div class="bar-col"><div class="bar-val">2%</div><div class="bar-fill" style="height:4%;background:linear-gradient(180deg,#fb923c,#c2410c);border-radius:0;"></div><div class="bar-label">96h+</div></div>
+    </div>
+    <div style="font-size:0.76rem;color:var(--dim);margin-top:0.4rem;">↑ Right-skewed distribution — zyada tar deliveries 24–48h mein, kuch outliers bahut late hain</div>
+  </div>
+
+  <!-- PIE CHART -->
+  <h5 style="font-family:var(--font-head);font-weight:800;color:var(--text);margin:1.5rem 0 1rem;"><i class="fa-solid fa-chart-pie me-2" style="color:var(--neon-gold)"></i>3. Pie / Donut Chart — Proportions</h5>
+  <div class="callout cb-gold" style="margin-bottom:0.5rem;">
+    <div class="ct"><i class="fa-solid fa-info-circle"></i> Kab Use Karein</div>
+    <strong>Whole ka hissa dekhna</strong> — kaunsa category total mein kitna % contribute karta hai. 6 se kam categories ke liye best.<br>
+    <em>🇮🇳 Example: Paytm payment modes ka share</em>
+  </div>
+  <div class="chart-wrap">
+    <div class="chart-title">💳 Paytm — Payment Mode Distribution</div>
+    <div class="pie-wrap">
+      <div class="pie-circle" style="background:conic-gradient(#d97706 0% 45%,#f97316 45% 70%,#3b82f6 70% 85%,#16a34a 85% 95%,#9ca3af 95% 100%);"></div>
+      <div class="pie-legend">
+        <div class="pie-legend-item"><div class="pie-dot" style="background:#d97706;"></div>UPI — 45%</div>
+        <div class="pie-legend-item"><div class="pie-dot" style="background:#f97316;"></div>Paytm Wallet — 25%</div>
+        <div class="pie-legend-item"><div class="pie-dot" style="background:#3b82f6;"></div>Debit/Credit Card — 15%</div>
+        <div class="pie-legend-item"><div class="pie-dot" style="background:#16a34a;"></div>Net Banking — 10%</div>
+        <div class="pie-legend-item"><div class="pie-dot" style="background:#9ca3af;"></div>Others — 5%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINE CHART -->
+  <h5 style="font-family:var(--font-head);font-weight:800;color:var(--text);margin:1.5rem 0 1rem;"><i class="fa-solid fa-chart-line me-2" style="color:var(--neon-blue)"></i>4. Line Chart — Trends Over Time</h5>
+  <div class="callout cb-blue" style="margin-bottom:0.5rem;">
+    <div class="ct"><i class="fa-solid fa-info-circle"></i> Kab Use Karein</div>
+    <strong>Time series data</strong> — kisi cheez ka time ke saath change track karna. Trends, seasonality, cycles visible hote hain.<br>
+    <em>🇮🇳 Example: Sensex monthly trend — seasonal patterns visible!</em>
+  </div>
+  <div class="chart-wrap">
+    <div class="chart-title">📈 Sensex Monthly Movement (Illustrative)</div>
+    <svg viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fffdf5;border-radius:8px;">
+      <defs>
+        <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#d97706" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#d97706" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M30,85 L75,78 L120,82 L165,65 L210,70 L255,50 L300,58 L345,40 L390,45 L435,35 L470,30" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M30,85 L75,78 L120,82 L165,65 L210,70 L255,50 L300,58 L345,40 L390,45 L435,35 L470,30 L470,110 L30,110 Z" fill="url(#lineGrad)"/>
+      <circle cx="30" cy="85" r="3" fill="#d97706"/>
+      <circle cx="120" cy="82" r="3" fill="#d97706"/>
+      <circle cx="210" cy="70" r="3" fill="#d97706"/>
+      <circle cx="300" cy="58" r="3" fill="#d97706"/>
+      <circle cx="390" cy="45" r="3" fill="#d97706"/>
+      <circle cx="470" cy="30" r="3" fill="#d97706"/>
+      <text x="25" y="115" font-size="9" fill="#9ca3af" font-family="sans-serif">Jan</text>
+      <text x="115" y="115" font-size="9" fill="#9ca3af" font-family="sans-serif">Mar</text>
+      <text x="205" y="115" font-size="9" fill="#9ca3af" font-family="sans-serif">May</text>
+      <text x="295" y="115" font-size="9" fill="#9ca3af" font-family="sans-serif">Jul</text>
+      <text x="385" y="115" font-size="9" fill="#9ca3af" font-family="sans-serif">Sep</text>
+      <text x="460" y="115" font-size="9" fill="#9ca3af" font-family="sans-serif">Nov</text>
+    </svg>
+    <div style="font-size:0.76rem;color:var(--dim);margin-top:0.4rem;">↑ Overall upward trend with fluctuations — line chart trend perfectly dikhata hai</div>
+  </div>
+
+  <!-- BOX PLOT mention + SCATTER -->
+  <h5 style="font-family:var(--font-head);font-weight:800;color:var(--text);margin:1.5rem 0 1rem;"><i class="fa-solid fa-ellipsis me-2" style="color:var(--neon-green)"></i>5. More Graphs — Box Plot &amp; Scatter Plot</h5>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <div class="callout cb-green h-100" style="margin:0;">
+        <div class="ct"><i class="fa-solid fa-box"></i> Box Plot (Box &amp; Whisker)</div>
+        <strong>5 number summary</strong> ek diagram mein — Min, Q1, Median, Q3, Max. Outliers clearly visible!<br><br>
+        <strong>Kab use karein:</strong> Distribution compare karna, outliers dhundna, skewness dekhna.<br>
+        <em style="font-size:0.82rem;">🇮🇳 IPL batsman scores across teams compare karna — Box Plot perfect!</em>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="callout cb-cyan h-100" style="margin:0;">
+        <div class="ct"><i class="fa-solid fa-braille"></i> Scatter Plot</div>
+        <strong>Do continuous variables ka relationship</strong> — correlation visualize karna.<br><br>
+        <strong>Kab use karein:</strong> Kya X badhne se Y badhta hai? Positive/negative/no correlation?<br>
+        <em style="font-size:0.82rem;">🇮🇳 MagicBricks: House area (sqft) vs Price — strong positive correlation!</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-responsive mt-4">
+    <table class="gtbl">
+      <thead><tr><th>Graph Type</th><th>Data Type</th><th>Main Purpose</th><th>India Example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Bar Chart</strong></td><td><span class="stat-pill sp-pink">Categorical</span></td><td>Categories compare karna</td><td>States mein literacy rate</td></tr>
+        <tr><td><strong>Histogram</strong></td><td><span class="stat-pill sp-blue">Continuous</span></td><td>Distribution shape dekhna</td><td>Rainfall distribution across months</td></tr>
+        <tr><td><strong>Pie Chart</strong></td><td><span class="stat-pill sp-pink">Categorical</span></td><td>Part of whole (%) dekhna</td><td>India ka export breakdown</td></tr>
+        <tr><td><strong>Line Chart</strong></td><td><span class="stat-pill sp-blue">Time Series</span></td><td>Trends over time dekhna</td><td>RBI interest rate over years</td></tr>
+        <tr><td><strong>Box Plot</strong></td><td><span class="stat-pill sp-blue">Numerical</span></td><td>Distribution + outliers</td><td>Student marks distribution by school</td></tr>
+        <tr><td><strong>Scatter Plot</strong></td><td><span class="stat-pill sp-blue">2 Numerical</span></td><td>Relationship/correlation</td><td>Study hours vs Exam marks</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- QUIZ 4 -->
+  <div class="quiz-box" data-quiz="4" data-correct="a" data-xp="25">
+    <div class="quiz-q">🤔 Ek Data Analyst ko IRCTC train journey times (in minutes) ka distribution analyze karna hai — kahan zyada delays ho rahe hain, data symmetric hai ya skewed? Kaunsa graph BEST rahega?</div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-ans="a" data-explain="Bilkul sahi! Journey time minutes mein continuous numerical data hai. Histogram specifically continuous numerical data ka distribution shape dikhata hai — kahan zyada frequency hai, kahan kam, symmetric hai ya right/left skewed, outliers kahan hain. Delays (extreme high values) right tail mein clearly dikhengi. Ye is question ke liye perfect graph hai!"><span class="opt-letter">A</span>Histogram — continuous journey time ka distribution shape aur delays (outliers) clearly dikhega</div>
+      <div class="quiz-opt" data-ans="b" data-explain="Nahi. Pie chart se proportions dikhen ge — 'kitne percent journeys 3-hour se zyada?' ye ek question answer ho sakta hai, lekin full distribution shape aur delay patterns nahi dikhenge. Continuous data ke liye pie chart appropriate nahi."><span class="opt-letter">B</span>Pie Chart — journey time ka share dekhna best hai</div>
+      <div class="quiz-opt" data-ans="c" data-explain="Nahi. Bar chart categorical data compare karne ke liye use hoti hai — jaise different routes ki comparison. Journey time continuous numerical data hai, isliye bar chart appropriate nahi hai (histogram use hoga, jo visually similar lekin conceptually alag hai)."><span class="opt-letter">C</span>Bar Chart — sab journeys compare karne ke liye</div>
+      <div class="quiz-opt" data-ans="d" data-explain="Nahi. Line chart time series ke liye hota hai — jaise 'January se December tak monthly average journey time'. Ek single distribution analyze karne ke liye line chart appropriate nahi."><span class="opt-letter">D</span>Line Chart — time pe data hai isliye line chart best hai</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████████
+     LEVEL 5 : POPULATION VS SAMPLE
+█████████████████████████████████████ -->
+<div class="level-card lvl-green fade-up" id="s5">
+  <div class="corner-deco">LEVEL 5</div>
+  <div class="lv-header">
+    <div class="lv-icon-wrap ico-green"><i class="fa-solid fa-people-group"></i></div>
+    <div class="lv-meta">
+      <div class="lv-eyebrow">Level 5 · Boss Topic</div>
+      <div class="lv-title">Population vs Sample — Poora vs Thoda</div>
+      <div class="lv-xp"><i class="fa-solid fa-star"></i> +30 XP on scroll</div>
+    </div>
+  </div>
+
+  <div class="callout cb-green">
+    <div class="ct"><i class="fa-solid fa-lightbulb"></i> Core Concept — Ek Line Mein</div>
+    <strong>Population</strong> = woh <span class="hl-green">poora group</span> jiske baare mein tum conclusions nikalte ho.<br>
+    <strong>Sample</strong> = population ka <span class="hl-blue">ek chota representative hissa</span> — jis pe actually study karte ho.<br><br>
+    Hum sample study karte hain kyunki poori population study karna practically impossible ya bahut expensive hota hai!
+  </div>
+
+  <!-- Visual: Population dots with sample highlighted -->
+  <div class="chart-wrap mt-3">
+    <div class="chart-title">👥 Bharat ki Population (1.4 Billion) vs Election Survey Sample</div>
+    <div class="row g-3">
+      <div class="col-md-8">
+        <div style="background:#f9fafb;border-radius:10px;padding:0.5rem;border:1px solid var(--border);">
+          <div style="font-size:0.76rem;font-weight:700;color:var(--dim);margin-bottom:0.4rem;padding-left:0.4rem;">🇮🇳 INDIA POPULATION (each dot = ~10 million people)</div>
+          <div class="pop-grid">
+            <!-- 100 dots: ~8 highlighted as sample (8%) -->
+            <div class="pop-dot" style="background:#d97706;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#d97706;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#d97706;"></div><div class="pop-dot" style="background:#e2e8f0;"></div>
+            <div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#d97706;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div>
+            <div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#d97706;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#d97706;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div>
+            <div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#d97706;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div>
+            <div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#d97706;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#d97706;"></div>
+            <div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div>
+            <div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div>
+            <div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div>
+            <div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div>
+            <div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div><div class="pop-dot" style="background:#e2e8f0;"></div>
+          </div>
+          <div style="font-size:0.75rem;color:var(--muted);padding:0.4rem;"><span style="display:inline-block;width:10px;height:10px;background:#d97706;border-radius:50%;margin-right:4px;"></span>Sampled (🟠) &nbsp;|&nbsp; <span style="display:inline-block;width:10px;height:10px;background:#e2e8f0;border-radius:50%;margin-right:4px;"></span>Not sampled (⚪)</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="callout cb-amber h-100" style="margin:0;">
+          <div class="ct"><i class="fa-solid fa-magnifying-glass"></i> Election Survey Example</div>
+          <strong>Population:</strong> 97 crore registered voters<br><br>
+          <strong>Sample:</strong> ~50,000 voters survey<br><br>
+          <strong>Goal:</strong> Sample se predict karo — poori population ka opinion kya hai?<br><br>
+          <em style="font-size:0.82rem;color:var(--dim);">Exit polls yahi karte hain! ABP News, India Today sab sampling use karte hain.</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="glow-div"></div>
+
+  <div class="row g-3">
+    <div class="col-md-6">
+      <div class="dim-card" style="border-color:rgba(22,163,74,0.3);">
+        <div class="dim-rank" style="color:var(--neon-green);">🌍</div>
+        <div class="dim-name" style="color:var(--neon-green);">Population</div>
+        <div class="dim-desc">Woh <strong>complete set</strong> of individuals/items jiske baare mein tum information collect karte ho. Context pe depend karta hai!<br><br>
+        Population <em>hamesha bada nahi hota</em> — it depends on your research question.<br><br>
+        <strong>Parameters:</strong> Population ke values — μ (mu) = population mean, σ (sigma) = population std</div>
+        <div class="dim-example" style="border-color:rgba(22,163,74,0.2);color:var(--muted);">
+          🇮🇳 <strong>Examples:</strong><br>
+          "All IIT students" → Population = 16,000 students<br>
+          "All Tata Motors cars in 2024" → Population = 8 lakh cars<br>
+          "All Zomato orders in January" → Population = 5 crore orders
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="dim-card" style="border-color:rgba(37,99,235,0.3);">
+        <div class="dim-rank" style="color:var(--neon-blue);">🔬</div>
+        <div class="dim-name" style="color:var(--neon-blue);">Sample</div>
+        <div class="dim-desc">Population ka ek <strong>subset/portion</strong> — carefully selected taaki population ko represent kare. Puri population ka proxy hai.<br><br>
+        <strong>Good sample:</strong> Representative hona chahiye — bias nahi hona chahiye.<br><br>
+        <strong>Statistics:</strong> Sample ke values — x̄ (x-bar) = sample mean, s = sample std</div>
+        <div class="dim-example" style="border-color:rgba(37,99,235,0.2);color:var(--muted);">
+          🇮🇳 <strong>Examples:</strong><br>
+          IIT se 500 students ka survey → Sample<br>
+          1000 random Tata cars quality test → Sample<br>
+          1 lakh Zomato orders analyze → Sample
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h5 style="font-family:var(--font-head);font-weight:800;color:var(--text);margin:1.5rem 0 1rem;"><i class="fa-solid fa-shuffle me-2" style="color:var(--neon-green)"></i>Sampling Methods — Sample Kaise Select Karein?</h5>
+
+  <div class="row g-3">
+    <div class="col-md-3 col-sm-6">
+      <div class="ach-card ac-amber">
+        <span class="ach-icon">🎲</span>
+        <div class="ach-title">Simple Random Sampling</div>
+        <div class="ach-desc">Har individual ko equal chance — lottery system. Sabse unbiased.<br><em style="font-size:0.78rem;">RBI bank audit selection</em></div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="ach-card ac-blue">
+        <span class="ach-icon">🗂️</span>
+        <div class="ach-title">Stratified Sampling</div>
+        <div class="ach-desc">Population ko groups (strata) mein baanto, phir har group se sample lo.<br><em style="font-size:0.78rem;">Census — urban/rural/gender strata</em></div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="ach-card ac-green">
+        <span class="ach-icon">🔢</span>
+        <div class="ach-title">Systematic Sampling</div>
+        <div class="ach-desc">List se har nth element lo — simple aur structured.<br><em style="font-size:0.78rem;">Factory QC — har 10th product test</em></div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="ach-card ac-orange">
+        <span class="ach-icon">🏘️</span>
+        <div class="ach-title">Cluster Sampling</div>
+        <div class="ach-desc">Population ko clusters mein baanto, kuch clusters randomly select karo.<br><em style="font-size:0.78rem;">School survey — puri kuch schools select</em></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout cb-red mt-4">
+    <div class="ct"><i class="fa-solid fa-triangle-exclamation"></i> Sampling Bias — Galat Sample = Galat Conclusion!</div>
+    <strong>Sampling Bias</strong> = jab sample population ko properly represent nahi karta — results misleading ho jaate hain!<br><br>
+    🚫 <strong>Example:</strong> Ek phone company ne online survey kiya — "kaunsa phone best?" → Sirf smartphone users participated → feature phone users excluded → <span class="hl-red">Biased result!</span><br>
+    🚫 <strong>Survivor Bias:</strong> Sirf successful startups pe study → lagta hai sab succeed karte hain → failed startups invisible!<br><br>
+    <strong>Solution:</strong> Random sampling + Adequate sample size + Diverse representation
+  </div>
+
+  <!-- QUIZ 5 -->
+  <div class="quiz-box" data-quiz="5" data-correct="c" data-xp="25">
+    <div class="quiz-q">🤔 ICMR ek COVID vaccine trial kar raha hai. Unka goal hai — poore India ki adult population (18+) ke liye results applicable hon. 40,000 volunteers ne trial participate kiya. Is case mein "Population" kya hai?</div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-ans="a" data-explain="Nahi. Ye 40,000 volunteers toh Sample hain — jo actually trial mein participate kiye. Population woh hota hai jiske baare mein conclusions nikalna chahte hain."><span class="opt-letter">A</span>40,000 volunteers jo trial mein participate kiye — ye population hai</div>
+      <div class="quiz-opt" data-ans="b" data-explain="Nahi. Sirf Delhi ke log population nahi ho sakti agar goal 'poore India ki adult population' ke liye results applicable karna hai. Population scope research question pe depend karta hai."><span class="opt-letter">B</span>Sirf Delhi ke adult citizens — jahan trial conduct hua</div>
+      <div class="quiz-opt" data-ans="c" data-explain="Bilkul sahi! Population = woh complete group jiske baare mein conclusions nikalna hai. Yahan ICMR ka goal hai ki vaccine ka effect poore India ke 18+ adults pe applicable ho — isliye Population = India ke saare adult citizens (18+), jo approximately 90 crore+ hain. 40,000 volunteers us population ka ek representative Sample hain!"><span class="opt-letter">C</span>India ke saare adult citizens (18+) — kyunki results unke liye applicable karna chahte hain</div>
+      <div class="quiz-opt" data-ans="d" data-explain="Nahi. ICMR ke scientists researchers hain — ye population nahi hai. Population woh target group hai jiske baare mein statistical conclusions nikalna hai, researchers nahi."><span class="opt-letter">D</span>ICMR ke scientists aur researchers — jo trial conduct kar rahe hain</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████████
+     FINAL SUMMARY
+█████████████████████████████████████ -->
+<div class="level-card lvl-pink fade-up" id="s6" style="background:linear-gradient(135deg,rgba(217,119,6,0.04),rgba(194,65,12,0.04),#ffffff);">
+  <div class="lv-header">
+    <div class="lv-icon-wrap ico-pink"><i class="fa-solid fa-trophy"></i></div>
+    <div class="lv-meta">
+      <div class="lv-eyebrow">🏆 Quest Complete!</div>
+      <div class="lv-title">Final Summary &amp; Statistics Learning Roadmap</div>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="gtbl">
+      <thead><tr><th>Topic</th><th>Core Idea</th><th>Key Takeaway</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="stat-pill sp-amber">L1</span> <strong>Statistics kya hai?</strong></td>
+          <td>Data collect, organize, analyze, interpret karna</td>
+          <td>Descriptive = describe existing data. Inferential = sample se population conclusions</td>
+        </tr>
+        <tr>
+          <td><span class="stat-pill sp-orange">L2</span> <strong>Data in Statistics</strong></td>
+          <td>4 measurement scales — Nominal, Ordinal, Interval, Ratio</td>
+          <td>Scale decide karta hai — kaunse statistical operations possible hain</td>
+        </tr>
+        <tr>
+          <td><span class="stat-pill sp-gold">L3</span> <strong>Types of Data</strong></td>
+          <td>Numerical (Continuous/Discrete) vs Categorical (Nominal/Ordinal)</td>
+          <td>Number hona ≠ Numerical! Pincode/Phone numbers Categorical hain</td>
+        </tr>
+        <tr>
+          <td><span class="stat-pill sp-blue">L4</span> <strong>Data Representation</strong></td>
+          <td>Sahi graph sahi data ke liye</td>
+          <td>Categorical→Bar/Pie. Numerical distribution→Histogram. Time→Line. Relationship→Scatter</td>
+        </tr>
+        <tr>
+          <td><span class="stat-pill sp-green">L5</span> <strong>Population vs Sample</strong></td>
+          <td>Population=complete group, Sample=representative subset</td>
+          <td>Sampling Bias se bachao — random + representative sample lo!</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="glow-div"></div>
+
+  <div class="mermaid-wrap">
+    <div class="mermaid">
+flowchart TD
+    A["📊 Statistics"] --> B["2 Branches"]
+    B --> C["📐 Descriptive\nMean, Median, Mode\nGraphs, Charts"]
+    B --> D["🔮 Inferential\nHypothesis Test\nConfidence Intervals"]
+    A --> E["Data Types"]
+    E --> F["🔢 Numerical\nContinuous / Discrete"]
+    E --> G["🏷️ Categorical\nNominal / Ordinal"]
+    A --> H["4 Measurement Scales"]
+    H --> I["Nominal → Ordinal\n→ Interval → Ratio"]
+    A --> J["📈 Visualization"]
+    J --> K["Bar / Histogram\nPie / Line / Scatter"]
+    A --> L["👥 Sampling"]
+    L --> M["Population vs Sample\nRandom / Stratified\n/ Systematic / Cluster"]
+    style A fill:#fef9e7,stroke:#d97706,color:#78350f,rx:12
+    style B fill:#fef9c3,stroke:#b45309,color:#713f12,rx:10
+    style C fill:#dbeafe,stroke:#2563eb,color:#1e3a8a,rx:10
+    style D fill:#ede9fe,stroke:#7c3aed,color:#4c1d95,rx:10
+    style E fill:#fef9c3,stroke:#b45309,color:#713f12,rx:10
+    style F fill:#dbeafe,stroke:#2563eb,color:#1e3a8a,rx:10
+    style G fill:#fce7f3,stroke:#db2777,color:#831843,rx:10
+    style H fill:#fef9c3,stroke:#b45309,color:#713f12,rx:10
+    style I fill:#fff7ed,stroke:#c2410c,color:#7c2d12,rx:10
+    style J fill:#fef9c3,stroke:#b45309,color:#713f12,rx:10
+    style K fill:#dcfce7,stroke:#16a34a,color:#14532d,rx:10
+    style L fill:#fef9c3,stroke:#b45309,color:#713f12,rx:10
+    style M fill:#ecfeff,stroke:#0891b2,color:#164e63,rx:10
+    </div>
+  </div>
+
+  <div class="row g-3 mt-2">
+    <div class="col-md-6">
+      <div class="callout cb-amber h-100" style="margin:0;">
+        <div class="ct"><i class="fa-solid fa-graduation-cap"></i> Aage Kya Seekhein? — Statistics Roadmap</div>
+        📌 <strong>Measures of Central Tendency</strong> — Mean, Median, Mode<br>
+        📊 <strong>Measures of Dispersion</strong> — Variance, Standard Deviation, IQR<br>
+        🔔 <strong>Probability &amp; Distributions</strong> — Normal, Binomial, Poisson<br>
+        🧪 <strong>Hypothesis Testing</strong> — t-test, chi-square, p-value<br>
+        📈 <strong>Correlation &amp; Regression</strong> — Pearson, Spearman<br>
+        🐍 <strong>Python Implementation</strong> — NumPy, pandas, scipy, seaborn<br>
+        📉 <strong>Bayesian Statistics</strong> — Prior, Posterior, Likelihood
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="callout cb-green h-100" style="margin:0;">
+        <div class="ct"><i class="fa-solid fa-fire"></i> Statistics aur Data Science Connection</div>
+        🔍 <strong>EDA:</strong> Descriptive statistics har jagah — mean, std, distributions<br>
+        🤖 <strong>ML Foundations:</strong> Loss functions, optimization, evaluation sab stats<br>
+        🧪 <strong>Feature Selection:</strong> Correlation, chi-square test use hota hai<br>
+        📊 <strong>Model Evaluation:</strong> Confidence intervals, hypothesis testing<br>
+        🎯 <strong>A/B Testing:</strong> Statistical significance — product decisions<br>
+        🔮 <strong>Bayesian ML:</strong> Probabilistic models — GPT bhi bayes pe!<br><br>
+        <em style="font-size:0.85rem;color:var(--dim);">"Statistics bina Data Science ek incomplete building hai!"</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout cb-pink mt-3">
+    <div class="ct"><i class="fa-solid fa-heart"></i> Final Message</div>
+    <strong>Statistics</strong> = Data se wisdom nikalna — numbers mein chhupi kahani padna!<br>
+    → <strong>Data Types</strong> = Sahi type pehchano — Nominal/Ordinal/Interval/Ratio decide karta hai kya kar sakte ho<br>
+    → <strong>Numerical vs Categorical</strong> = Number hona kaafi nahi — math meaningful hona chahiye!<br>
+    → <strong>Graphs</strong> = Sahi visualization sahi insight — categorical ke liye bar, continuous ke liye histogram<br>
+    → <strong>Population vs Sample</strong> = Sab study nahi kar sakte — smart sampling se sahi conclusions nikalo!<br><br>
+    <strong style="color:var(--neon-pink)">Statistics ki neenv rakh di tumne — ab Data Science ki har cheez make sense karegi! Numbers sirf numbers nahi rahenge — woh insights ban jaayenge. Statistics Grandmaster ban gaye! 📊🚀</strong>
+  </div>
+</div>
+
+</div><!-- /container-main -->
+
+<!-- FOOTER -->
+<footer class="gfooter">
+  <div class="container-main">
+    <div class="gfooter-logo"><i class="fa-solid fa-chart-simple me-2"></i>Mathematics &amp; Statistics Quest</div>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0.5rem;">Statistics · Data in Statistics · Types of Data · Graphs · Population vs Sample | Gamified Tutorial</p>
+    <p style="color:var(--dim);font-size:0.82rem;">Made with <i class="fa-solid fa-heart" style="color:var(--neon-pink)"></i> for Hindi-speaking Data Science learners across India 🇮🇳</p>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- MODAL -->
+<canvas id="confettiCanvas"></canvas>
+<div class="modal-overlay" id="finalModal">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" id="modalClose" title="Close">✕</button>
+    <div class="modal-trophy" id="modalTrophy">🏆</div>
+    <div class="modal-title" id="modalTitle">Quest Complete!</div>
+    <div class="modal-subtitle" id="modalSubtitle">Tumne saare 5 quizzes complete kar liye!</div>
+    <div class="score-ring-wrap">
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120">
+          <circle class="ring-bg" cx="60" cy="60" r="52"/>
+          <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52"/>
+        </svg>
+        <div class="ring-text">
+          <div class="ring-num" id="ringNum">0/5</div>
+          <div class="ring-label">Score</div>
+        </div>
+      </div>
+    </div>
+    <div class="grade-card" id="gradeCard">
+      <div class="grade-letter" id="gradeLetter">S</div>
+      <div class="grade-msg" id="gradeMsg">Exceptional!</div>
+    </div>
+    <div class="modal-xp-row">
+      <span class="mxp-label">⚡ Total XP Earned from Quizzes</span>
+      <span class="mxp-val" id="modalXpVal">0 XP</span>
+    </div>
+    <div class="modal-btns">
+      <button class="modal-btn-retry" id="modalRetry"><i class="fa-solid fa-rotate-right"></i> Retry All</button>
+      <button class="modal-btn-continue" id="modalContinue"><i class="fa-solid fa-trophy"></i> Awesome, Continue!</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function showFinalModal(){
+  const total=quizTotal,correct=quizCorrect,pct=total>0?correct/total:0,quizXP=correct*25;
+  const grades=[
+    {min:1.0,cls:'grade-s',letter:'S 🌟',msg:'Zabardast! Sab 5/5 correct! Statistics Grandmaster! 📊'},
+    {min:0.8,cls:'grade-a',letter:'A 🎯',msg:'Bahut badhiya! Almost perfect!'},
+    {min:0.6,cls:'grade-b',letter:'B 📘',msg:'Accha kiya! Kuch topics dobara review karo.'},
+    {min:0.4,cls:'grade-c',letter:'C 💪',msg:'Theek hai! Concepts ko aur practice karo.'},
+    {min:0.0,cls:'grade-d',letter:'D 📚',msg:'Aur mehnat karo! Tutorial dobara padho.'},
+  ];
+  const g=grades.find(gr=>pct>=gr.min);
+  document.getElementById('ringNum').textContent=correct+'/'+total;
+  document.getElementById('modalXpVal').textContent=quizXP+' XP';
+  const gc=document.getElementById('gradeCard');gc.className='grade-card '+g.cls;
+  document.getElementById('gradeLetter').textContent=g.letter;
+  document.getElementById('gradeMsg').textContent=g.msg;
+  if(pct===1.0){
+    document.getElementById('modalTrophy').textContent='🏆';
+    document.getElementById('modalTitle').textContent='🎊 Perfect Score!';
+    document.getElementById('modalSubtitle').textContent='Wah! Saare '+total+'/'+total+' sahi! Statistics Grandmaster!';
+  }else if(pct>=0.6){
+    document.getElementById('modalTrophy').textContent='🎯';
+    document.getElementById('modalTitle').textContent='Quest Complete!';
+    document.getElementById('modalSubtitle').textContent=correct+' out of '+total+' correct. Kafi accha kiya!';
+  }else{
+    document.getElementById('modalTrophy').textContent='📚';
+    document.getElementById('modalTitle').textContent='Keep Trying!';
+    document.getElementById('modalSubtitle').textContent='Tutorial dobara padho aur retry karo!';
+  }
+  const circumference=327,offset=circumference*(1-pct);
+  const ringColors={'grade-s':'#d97706','grade-a':'#16a34a','grade-b':'#2563eb','grade-c':'#7c3aed','grade-d':'#dc2626'};
+  const ringEl=document.getElementById('ringFill');
+  ringEl.style.stroke=ringColors[g.cls]||'#d97706';
+  ringEl.style.transition='none';ringEl.style.strokeDashoffset='327';
+  setTimeout(()=>{ringEl.style.transition='stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1)';ringEl.style.strokeDashoffset=offset;},80);
+  document.getElementById('finalModal').classList.add('open');
+  if(pct>=0.6)launchConfetti(pct);
+}
+
+function launchConfetti(pct){
+  const canvas=document.getElementById('confettiCanvas'),ctx=canvas.getContext('2d');
+  canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+  const count=Math.floor(80+pct*140);
+  const colors=['#d97706','#f59e0b','#c2410c','#16a34a','#2563eb','#db2777','#0891b2'];
+  const pieces=Array.from({length:count},()=>({x:Math.random()*canvas.width,y:Math.random()*-canvas.height*0.6,w:Math.random()*10+5,h:Math.random()*6+3,color:colors[Math.floor(Math.random()*colors.length)],vx:(Math.random()-0.5)*4,vy:Math.random()*4+2,rot:Math.random()*360,vrot:(Math.random()-0.5)*9,alpha:1}));
+  let frame=0;
+  (function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);let alive=false;
+    pieces.forEach(p=>{
+      if(p.y>canvas.height+20)return;alive=true;
+      p.x+=p.vx;p.y+=p.vy;p.rot+=p.vrot;
+      if(p.y>canvas.height*0.65)p.alpha-=0.02;
+      p.alpha=Math.max(0,p.alpha);
+      ctx.save();ctx.globalAlpha=p.alpha;ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);
+      ctx.fillStyle=p.color;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();
+    });
+    frame++;
+    if(alive&&frame<260)requestAnimationFrame(draw);
+    else ctx.clearRect(0,0,canvas.width,canvas.height);
+  })();
+}
+
+function initQuizzes(){
+  document.querySelectorAll('.quiz-box').forEach(box=>{
+    box.querySelectorAll('.quiz-opt').forEach(opt=>{const n=opt.cloneNode(true);opt.parentNode.replaceChild(n,opt);});
+    const correct=box.dataset.correct,qxp=parseInt(box.dataset.xp)||25;
+    let answered=false;
+    box.querySelectorAll('.quiz-opt').forEach(opt=>{
+      opt.addEventListener('click',()=>{
+        if(answered)return;answered=true;
+        const ans=opt.dataset.ans,fb=box.querySelector('.quiz-feedback'),isCorrect=ans===correct;
+        box.querySelectorAll('.quiz-opt').forEach(o=>{
+          o.classList.add('answered-opt');
+          const ex=box.querySelector('.quiz-explain[data-for-ans="'+o.dataset.ans+'"]');
+          if(o.dataset.ans===correct){o.classList.add('correct');if(ex)ex.classList.add('show-correct');}
+          else if(o===opt&&!isCorrect){o.classList.add('wrong');if(ex)ex.classList.add('show-wrong');}
+          else{o.classList.add('dimmed');if(o.dataset.ans===correct&&ex)ex.classList.add('show-reveal');}
+        });
+        if(isCorrect){quizCorrect++;fb.className='quiz-feedback show win';fb.innerHTML='<span style="font-size:1.3rem">🎉</span> Zabardast! Sahi jawab! <strong>+'+qxp+' XP</strong> earned!';addXP(qxp);showToast('⚡','+'+qxp+' XP!','Bilkul sahi jawab!','#16a34a');}
+        else{fb.className='quiz-feedback show lose';fb.innerHTML='<span style="font-size:1.3rem">💡</span> Galat! Sahi jawab highlight ho gaya — concept dobara padho!';showToast('💡','Galat!','Sahi jawab dekho aur concept review karo.','#dc2626');}
+        const doneCount=Array.from(document.querySelectorAll('.quiz-box')).filter(b=>b.querySelector('.quiz-opt.answered-opt')).length;
+        if(doneCount===quizTotal)setTimeout(showFinalModal,1200);
+      });
+    });
+  });
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#fef9e7',primaryTextColor:'#1c1405',primaryBorderColor:'#d97706',lineColor:'#94a3b8',secondaryColor:'#dcfce7',tertiaryColor:'#ede9fe',fontFamily:'Plus Jakarta Sans, sans-serif',fontSize:'13px'},flowchart:{curve:'basis',padding:20}});
+
+let xp=0,scrollXpEarned=0;
+const XP_MAX=275;
+const earnedBadges=new Set();
+
+function addXP(amount,badgeId){
+  if(badgeId)scrollXpEarned=Math.min(scrollXpEarned+amount,150);
+  xp=Math.min(xp+amount,XP_MAX);
+  document.getElementById('xpFill').style.width=(xp/XP_MAX*100)+'%';
+  document.getElementById('xpScore').textContent=xp+' / '+XP_MAX+' XP';
+  if(badgeId&&!earnedBadges.has(badgeId)){earnedBadges.add(badgeId);const el=document.getElementById(badgeId);if(el)el.classList.add('earned');}
+  if(xp>=XP_MAX)showToast('🏆','QUEST COMPLETE! 🎊','Statistics Grandmaster! 275/275 XP!','#d97706');
+}
+
+function showToast(icon,title,msg,color){
+  const container=document.getElementById('toastContainer');
+  const t=document.createElement('div');t.className='gtoast';
+  t.innerHTML=`<span class="gtoast-icon">${icon}</span><div><div style="font-weight:800;color:${color};font-size:0.9rem;">${title}</div><div style="color:#6b7280;font-size:0.8rem;font-weight:400;">${msg}</div></div>`;
+  container.appendChild(t);
+  setTimeout(()=>t.classList.add('show'),50);
+  setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),400);},3500);
+}
+
+let quizTotal=0,quizCorrect=0;
+
+document.querySelectorAll('.quiz-box').forEach(box=>{
+  quizTotal++;
+  const correct=box.dataset.correct,qxp=parseInt(box.dataset.xp)||25;
+  let answered=false;
+  box.querySelectorAll('.quiz-opt').forEach(opt=>{
+    const explain=opt.dataset.explain||'';
+    if(explain){const div=document.createElement('div');div.className='quiz-explain';div.dataset.forAns=opt.dataset.ans;div.textContent=explain;opt.parentNode.insertBefore(div,opt.nextSibling);}
+  });
+  box.querySelectorAll('.quiz-opt').forEach(opt=>{
+    opt.addEventListener('click',()=>{
+      if(answered)return;answered=true;
+      const ans=opt.dataset.ans,fb=box.querySelector('.quiz-feedback'),isCorrect=ans===correct;
+      box.querySelectorAll('.quiz-opt').forEach(o=>{
+        o.classList.add('answered-opt');
+        const ex=box.querySelector('.quiz-explain[data-for-ans="'+o.dataset.ans+'"]');
+        if(o.dataset.ans===correct){o.classList.add('correct');if(ex)ex.classList.add('show-correct');}
+        else if(o===opt&&!isCorrect){o.classList.add('wrong');if(ex)ex.classList.add('show-wrong');}
+        else{o.classList.add('dimmed');if(o.dataset.ans===correct&&ex)ex.classList.add('show-reveal');}
+      });
+      if(isCorrect){quizCorrect++;fb.className='quiz-feedback show win';fb.innerHTML='<span style="font-size:1.3rem">🎉</span> Zabardast! Sahi jawab! <strong>+'+qxp+' XP</strong> earned!';addXP(qxp);showToast('⚡','+'+qxp+' XP!','Bilkul sahi jawab!','#16a34a');}
+      else{fb.className='quiz-feedback show lose';fb.innerHTML='<span style="font-size:1.3rem">💡</span> Galat! Sahi jawab highlight ho gaya — concept dobara padho!';showToast('💡','Galat!','Sahi jawab dekho aur concept review karo.','#dc2626');}
+      const doneCount=Array.from(document.querySelectorAll('.quiz-box')).filter(b=>b.querySelector('.quiz-opt.answered-opt')).length;
+      if(doneCount===quizTotal)setTimeout(showFinalModal,1200);
+    });
+  });
+});
+
+const fadeObserver=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');fadeObserver.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.fade-up').forEach(el=>fadeObserver.observe(el));
+
+const sectionXP={
+  's1':{xp:30,badge:'badge1',msg:'📊 Stats Initiate badge unlocked!'},
+  's2':{xp:30,badge:'badge2',msg:'🗃️ Data Detective badge unlocked!'},
+  's3':{xp:30,badge:'badge3',msg:'🔢 Type Master badge unlocked!'},
+  's4':{xp:30,badge:'badge4',msg:'📈 Graph Guru badge unlocked!'},
+  's5':{xp:30,badge:'badge5',msg:'🎯 Sampling Pro badge unlocked!'},
+};
+const xpObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      if(sectionXP[id]&&!earnedBadges.has(sectionXP[id].badge)){const{xp:sx,badge,msg}=sectionXP[id];addXP(sx,badge);showToast('🏅','Badge Unlocked!',msg,'#d97706');}
+      xpObserver.unobserve(e.target);
+    }
+  });
+},{threshold:0.12});
+['s1','s2','s3','s4','s5'].forEach(id=>{const el=document.getElementById(id);if(el)xpObserver.observe(el);});
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});});
+
+function closeModal(){document.getElementById('finalModal').classList.remove('open');}
+document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('modalContinue').addEventListener('click',closeModal);
+document.getElementById('modalRetry').addEventListener('click',()=>{
+  closeModal();quizCorrect=0;xp=scrollXpEarned;
+  document.getElementById('xpFill').style.width=(xp/XP_MAX*100)+'%';
+  document.getElementById('xpScore').textContent=xp+' / '+XP_MAX+' XP';
+  document.querySelectorAll('.quiz-box').forEach(box=>{
+    box.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('correct','wrong','dimmed','answered-opt'));
+    box.querySelectorAll('.quiz-explain').forEach(ex=>ex.classList.remove('show-correct','show-wrong','show-reveal'));
+    const fb=box.querySelector('.quiz-feedback');if(fb){fb.className='quiz-feedback';fb.innerHTML='';}
+  });
+  initQuizzes();window.scrollTo({top:0,behavior:'smooth'});
+});
+document.getElementById('finalModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+</script>
+
+</body>
+</html>
