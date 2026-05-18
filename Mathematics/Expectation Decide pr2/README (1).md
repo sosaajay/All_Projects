@@ -135,4 +135,3 @@ Therefore, attendance, study habits, and participation are important factors aff
 - Pandas
 - NumPy
 - Matplotlib
-- Jupyter Notebook
