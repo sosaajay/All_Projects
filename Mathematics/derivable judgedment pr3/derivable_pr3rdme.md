@@ -45,7 +45,7 @@ The dataset contains 500 records and the following attributes:
 
 ### Dataset Preview
 
-![Dataset Preview](Screenshots/dataset.png)
+![Dataset Preview](screenshots/dataset.png)
 
 ---
 
@@ -214,7 +214,7 @@ To estimate the population mean age.
 
 #### Output Screenshot
 
-![Confidence Interval](Screenshots/confidence_interval.png)
+![Confidence Interval](screenshots/confidence_interval.png)
 
 ---
 
@@ -234,7 +234,7 @@ Outputs:
 
 #### Output Screenshot
 
-![T-Test](Screenshots/t_test.png)
+![T-Test](screenshots/t_test.png)
 
 ---
 
@@ -255,7 +255,7 @@ Outputs:
 
 #### Output Screenshot
 
-![Chi-Square Test](Screenshots/chi_square.png)
+![Chi-Square](screenshots/chi_square.png)
 ---
 
 ### ANOVA Analysis
@@ -274,7 +274,7 @@ Outputs:
 
 #### Output Screenshot
 
-![ANOVA](Screenshots/anova.png)
+![ANOVA](screenshots/anova.png)
 
 ---
 
@@ -304,15 +304,15 @@ To determine the strength and direction of the relationship between age and BMI.
 
 ### Age Distribution Histogram
 
-![Age Distribution](Screenshots/age_distribution.png)
+![Age Distribution](screenshots/age_distribution.png)
 
 ### BMI Distribution Histogram
 
-![BMI Distribution](Screenshots/bmi_distribution.png)
+![BMI Distribution](screenshots/bmi_distribution.png)
 
 ### Smoking Status Bar Chart
 
-![Smoking Status Count](Screenshots/smoking_status_count.png)
+![Smoking Status Count](screenshots/smoking_status_count.png)
 
 These charts help understand patterns and distributions in the dataset.
 ---
