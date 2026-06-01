@@ -45,7 +45,7 @@ The dataset contains 500 records and the following attributes:
 
 ### Dataset Preview
 
-![Dataset Preview](./screenshots/dataset.png.png)
+![Dataset Preview](./screenshots/dataset.png)
 
 ---
 
