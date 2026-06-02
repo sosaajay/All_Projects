@@ -78,6 +78,7 @@ A range that estimates the true population parameter with a confidence level (95
 ## 1️⃣ Confidence Interval: Mean Blood Pressure
 A 95% confidence interval was calculated for mean blood pressure.
 
+## 🖼️📊 Screenshots
 <img src="./screenshots/Mean_Blood_Pressure.png" width="500"/>
 
 ---
@@ -85,6 +86,7 @@ A 95% confidence interval was calculated for mean blood pressure.
 ## 2️⃣ T-Test: Glucose Levels (Smokers vs Non-Smokers)
 Used to check whether smoking affects glucose levels.
 
+## 🖼️📊 Screenshots
 <img src="./screenshots/Smokers_vs_Non_Smokers.png" width="500"/>
 
 ---
@@ -92,6 +94,7 @@ Used to check whether smoking affects glucose levels.
 ## 3️⃣ Chi-Square Test: Smoking Status vs Diabetes
 Used to check association between smoking and diabetes.
 
+## 🖼️📊 Screenshots
 <img src="./screenshots/Smoking_Status_vs_Diabetes.png" width="500"/>
 
 ---
@@ -99,6 +102,7 @@ Used to check association between smoking and diabetes.
 ## 4️⃣ ANOVA: Blood Pressure Across Age Groups
 Used to compare blood pressure across different age groups.
 
+## 🖼️📊 Screenshots
 <img src="./screenshots/Blood_Pressure_Across_Age_Groups.png" width="500"/>
 
 ---
@@ -106,6 +110,7 @@ Used to compare blood pressure across different age groups.
 ## 5️⃣ Correlation: Age vs BMI
 Used to analyze relationship between age and BMI.
 
+## 🖼️📊 Screenshots
 <img src="./screenshots/Age_vs_BMI.png" width="500"/>
 
 ---
