@@ -1,82 +1,13 @@
-<<<<<<< HEAD
-# 📊 Inferential Statistics Project (Health Dataset Analysis)
+# 🩺 Health Dataset Inferential Statistics Project
 
-## 🎯 Objective
-The objective of this project is to apply **inferential statistical techniques** on a health-related dataset and analyze how different factors such as smoking, age, BMI, glucose level, and diabetes are related.
+## 📌 Overview
+This project applies **inferential statistical methods** on a health dataset to analyze relationships between lifestyle factors (smoking, age, BMI) and health outcomes (blood pressure, diabetes, glucose levels).
 
----
-
-## 📚 Theory
-
-### 📌 Inferential Statistics
-Inferential statistics helps us draw conclusions about a large population using a smaller sample of data. Instead of analyzing everyone, we analyze a subset and generalize the results.
+The goal is to extract meaningful insights using statistical hypothesis testing and data visualization.
 
 ---
 
-### 📌 Hypothesis Testing
-A hypothesis is a statement about a population parameter.
-
-- **Null Hypothesis (H₀):** Assumes no effect or no difference.
-- **Alternative Hypothesis (H₁):** Assumes there is an effect or difference.
-
-Example:
-- H₀: Mean glucose levels of smokers and non-smokers are equal.
-- H₁: Mean glucose levels are different.
-
----
-
-### 📌 Confidence Interval
-A confidence interval gives a range where the true population parameter is expected to lie.
-
----
-
-### 📌 P-value
-- p-value < 0.05 → Reject H₀  
-- p-value > 0.05 → Fail to reject H₀  
-
----
-
-### 📌 Errors in Hypothesis Testing
-- **Type I Error:** Rejecting a true null hypothesis  
-- **Type II Error:** Failing to reject a false null hypothesis  
-
----
-
-### 📌 Statistical Tests Used
-
-#### 1. Z-Test
-Used for large sample sizes (n > 30) when population standard deviation is known.
-
-#### 2. T-Test
-Used to compare means of two groups when sample size is small.
-
-#### 3. Chi-Square Test
-Used to find relationship between categorical variables.
-
-#### 4. ANOVA
-Used to compare means of three or more groups.
-
----
-
-### 📌 Covariance
-Measures the direction of relationship between two variables.
-
-- Positive → both increase together  
-- Negative → one increases, other decreases  
-- Zero → no relationship  
-
----
-
-### 📌 Correlation
-Measures strength and direction of relationship between variables.
-
-- Positive correlation  
-- Negative correlation  
-- No correlation  
-
----
-
-## 🛠️ Tools & Libraries Used
+## 🛠️ Tools & Technologies
 - Python 🐍  
 - Pandas  
 - NumPy  
@@ -86,10 +17,9 @@ Measures strength and direction of relationship between variables.
 ---
 
 ## 📂 Dataset
-The dataset used is:  
-`health_dataset.csv`
+File used: `health_dataset.csv`
 
-It includes:
+### Features:
 - Age  
 - BMI  
 - Blood Pressure  
@@ -100,281 +30,124 @@ It includes:
 
 ---
 
-## 📊 Analysis & Visualizations
-
----
-
-## 1️⃣ Confidence Interval: Mean Blood Pressure
-
-A 95% confidence interval was calculated to estimate the mean blood pressure of the population.
-
-### 📈 Result Visualization
-<img src="Mean_Blood_Pressure.png" width="500"/>
-
----
-
-## 2️⃣ T-Test: Glucose Levels (Smokers vs Non-Smokers)
-
-This test compares whether smoking status affects glucose levels.
-
-### 📊 Result Visualization
-<img src="Smokers_vs_Non_Smokers.png" width="500"/>
-
----
-
-## 3️⃣ Chi-Square Test: Smoking Status vs Diabetes
-
-This test checks whether smoking is associated with diabetes.
-
-### 📊 Result Visualization
-<img src="Smoking_Status_vs_Diabetes.png" width="500"/>
-
----
-
-## 4️⃣ ANOVA: Blood Pressure Across Age Groups
-
-This test compares blood pressure across different age groups.
-
-### 📊 Result Visualization
-<img src="Blood_Pressure_Across_Age_Groups.png" width="500"/>
-
----
-
-## 5️⃣ Correlation & Covariance: Age vs BMI
-
-This analysis shows how age and BMI are related.
-
-### 📊 Result Visualization
-<img src="Age_vs_BMI.png" width="500"/>
-
----
-
-## 📌 Final Observations
-
-- Smoking has a measurable effect on glucose levels (based on statistical testing).
-- Blood pressure varies across different age groups.
-- Smoking and diabetes show a statistical relationship.
-- Age and BMI show a measurable correlation.
-- Visualizations help clearly understand patterns in health data.
-
----
-
-## 📉 Conclusion
-
-This project demonstrates how **inferential statistics** can be used to analyze health data and make meaningful conclusions. Using hypothesis testing, confidence intervals, and correlation analysis, we can identify important relationships between health factors.
-
-All results were interpreted using a significance level of **α = 0.05**.
-
----
-
-## 🖼️ Visual Summary (All Plots Used)
-
-- Mean_Blood_Pressure.png  
-- Smokers_vs_Non_Smokers.png  
-- Smoking_Status_vs_Diabetes.png  
-- Blood_Pressure_Across_Age_Groups.png  
-- Age_vs_BMI.png  
-
----
-
-## 🚀 Outcome
-
-This project successfully demonstrates:
-- Statistical reasoning  
-- Data visualization  
-- Hypothesis testing  
-- Real-world health data analysis  
-
----
-
-=======
-# 📊 Inferential Statistics Project (Health Dataset Analysis)
-
-## 🎯 Objective
-The objective of this project is to apply **inferential statistical techniques** on a health-related dataset and analyze how different factors such as smoking, age, BMI, glucose level, and diabetes are related.
-
----
-
-## 📚 Theory
+## 📚 Statistical Concepts Used
 
 ### 📌 Inferential Statistics
-Inferential statistics helps us draw conclusions about a large population using a smaller sample of data. Instead of analyzing everyone, we analyze a subset and generalize the results.
+Used to draw conclusions about a population using sample data.
 
 ---
 
 ### 📌 Hypothesis Testing
-A hypothesis is a statement about a population parameter.
+- **Null Hypothesis (H₀):** No effect or difference  
+- **Alternative Hypothesis (H₁):** Effect or difference exists  
 
-- **Null Hypothesis (H₀):** Assumes no effect or no difference.
-- **Alternative Hypothesis (H₁):** Assumes there is an effect or difference.
-
-Example:
-- H₀: Mean glucose levels of smokers and non-smokers are equal.
-- H₁: Mean glucose levels are different.
+Example:  
+Smoking has no effect on glucose levels vs smoking affects glucose levels.
 
 ---
 
 ### 📌 Confidence Interval
-A confidence interval gives a range where the true population parameter is expected to lie.
+A range that estimates the true population parameter with a confidence level (95%).
 
 ---
 
-### 📌 P-value
+### 📌 P-value Rule
 - p-value < 0.05 → Reject H₀  
-- p-value > 0.05 → Fail to reject H₀  
-
----
-
-### 📌 Errors in Hypothesis Testing
-- **Type I Error:** Rejecting a true null hypothesis  
-- **Type II Error:** Failing to reject a false null hypothesis  
+- p-value ≥ 0.05 → Fail to reject H₀  
 
 ---
 
 ### 📌 Statistical Tests Used
-
-#### 1. Z-Test
-Used for large sample sizes (n > 30) when population standard deviation is known.
-
-#### 2. T-Test
-Used to compare means of two groups when sample size is small.
-
-#### 3. Chi-Square Test
-Used to find relationship between categorical variables.
-
-#### 4. ANOVA
-Used to compare means of three or more groups.
+- **Z-Test:** Large sample comparison  
+- **T-Test:** Compare two group means  
+- **Chi-Square Test:** Association between categorical variables  
+- **ANOVA:** Compare more than two group means  
 
 ---
 
-### 📌 Covariance
-Measures the direction of relationship between two variables.
-
-- Positive → both increase together  
-- Negative → one increases, other decreases  
-- Zero → no relationship  
+### 📌 Covariance & Correlation
+- Covariance → Direction of relationship  
+- Correlation → Strength + direction of relationship  
 
 ---
 
-### 📌 Correlation
-Measures strength and direction of relationship between variables.
-
-- Positive correlation  
-- Negative correlation  
-- No correlation  
-
----
-
-## 🛠️ Tools & Libraries Used
-- Python 🐍  
-- Pandas  
-- NumPy  
-- Matplotlib  
-- SciPy  
-
----
-
-## 📂 Dataset
-The dataset used is:  
-`health_dataset.csv`
-
-It includes:
-- Age  
-- BMI  
-- Blood Pressure  
-- Glucose Level  
-- Smoking Status  
-- Diabetes Status  
-- Age Groups  
-
----
-
-## 📊 Analysis & Visualizations
+## 📊 Analysis & Results
 
 ---
 
 ## 1️⃣ Confidence Interval: Mean Blood Pressure
+A 95% confidence interval was calculated for mean blood pressure.
 
-A 95% confidence interval was calculated to estimate the mean blood pressure of the population.
-
-### 📈 Result Visualization
-<img src="Mean_Blood_Pressure.png" width="500"/>
+<img src="./screenshots/Mean_Blood_Pressure.png" width="500"/>
 
 ---
 
 ## 2️⃣ T-Test: Glucose Levels (Smokers vs Non-Smokers)
+Used to check whether smoking affects glucose levels.
 
-This test compares whether smoking status affects glucose levels.
-
-### 📊 Result Visualization
-<img src="Smokers_vs_Non_Smokers.png" width="500"/>
+<img src="./screenshots/Smokers_vs_Non_Smokers.png" width="500"/>
 
 ---
 
 ## 3️⃣ Chi-Square Test: Smoking Status vs Diabetes
+Used to check association between smoking and diabetes.
 
-This test checks whether smoking is associated with diabetes.
-
-### 📊 Result Visualization
-<img src="Smoking_Status_vs_Diabetes.png" width="500"/>
+<img src="./screenshots/Smoking_Status_vs_Diabetes.png" width="500"/>
 
 ---
 
 ## 4️⃣ ANOVA: Blood Pressure Across Age Groups
+Used to compare blood pressure across different age groups.
 
-This test compares blood pressure across different age groups.
-
-### 📊 Result Visualization
-<img src="Blood_Pressure_Across_Age_Groups.png" width="500"/>
+<img src="./screenshots/Blood_Pressure_Across_Age_Groups.png" width="500"/>
 
 ---
 
-## 5️⃣ Correlation & Covariance: Age vs BMI
+## 5️⃣ Correlation: Age vs BMI
+Used to analyze relationship between age and BMI.
 
-This analysis shows how age and BMI are related.
-
-### 📊 Result Visualization
-<img src="Age_vs_BMI.png" width="500"/>
+<img src="./screenshots/Age_vs_BMI.png" width="500"/>
 
 ---
 
-## 📌 Final Observations
+## 📌 Key Findings
 
-- Smoking has a measurable effect on glucose levels (based on statistical testing).
-- Blood pressure varies across different age groups.
-- Smoking and diabetes show a statistical relationship.
-- Age and BMI show a measurable correlation.
-- Visualizations help clearly understand patterns in health data.
+- Smoking significantly affects glucose levels  
+- Blood pressure varies across age groups  
+- Smoking and diabetes show statistical association  
+- Age and BMI are correlated  
+- Health factors are interconnected and measurable using statistics  
+
+---
+
+## 📈 Visual Summary
+
+- Histogram: Blood Pressure Distribution  
+- Box Plot: Smoking vs Glucose Levels  
+- Bar Chart: Smoking vs Diabetes  
+- Box Plot: Blood Pressure vs Age Groups  
+- Scatter Plot: Age vs BMI  
 
 ---
 
 ## 📉 Conclusion
+This project demonstrates how **inferential statistics** can be used to analyze real-world health data and extract meaningful insights.
 
-This project demonstrates how **inferential statistics** can be used to analyze health data and make meaningful conclusions. Using hypothesis testing, confidence intervals, and correlation analysis, we can identify important relationships between health factors.
+Using hypothesis testing, confidence intervals, and correlation analysis, we can identify significant relationships between lifestyle factors and health conditions.
 
-All results were interpreted using a significance level of **α = 0.05**.
+All tests were performed using significance level:
 
----
-
-## 🖼️ Visual Summary (All Plots Used)
-
-- Mean_Blood_Pressure.png  
-- Smokers_vs_Non_Smokers.png  
-- Smoking_Status_vs_Diabetes.png  
-- Blood_Pressure_Across_Age_Groups.png  
-- Age_vs_BMI.png  
+**α = 0.05**
 
 ---
 
 ## 🚀 Outcome
 
-This project successfully demonstrates:
-- Statistical reasoning  
-- Data visualization  
-- Hypothesis testing  
-- Real-world health data analysis  
+✔ Statistical reasoning  
+✔ Data analysis  
+✔ Hypothesis testing  
+✔ Data visualization  
+✔ Real-world health insights  
 
 ---
-
->>>>>>> 8acf13bd6209b15bfb6a59f08287ffde03fda957
-⭐ *End of Project*
+⭐ **End of Project**
