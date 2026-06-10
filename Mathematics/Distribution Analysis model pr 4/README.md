@@ -271,7 +271,7 @@ Visualized probability distribution behaviour.
 | 📈 SciPy | Statistical Analysis |
 | 📊 Matplotlib | Visualization |
 | 📉 Statsmodels | Q-Q Plot |
-| 📒 Jupyter Notebook | Execution |
+
 
 ---
 
