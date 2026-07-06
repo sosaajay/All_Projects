@@ -122,24 +122,8 @@ extreme/erroneous records while keeping the rest of the distribution intact.
 
 ---
 
-## ▶️ How to Run
-
-1. Keep `patient_health_records.csv` in the same folder as the notebook.
-2. Open `healthcare_data_cleansing_final.ipynb` in Jupyter Notebook / JupyterLab / Google Colab.
-3. Run all cells from top to bottom (**Cell → Run All**).
-4. The final cleaned dataset will be saved as `cleaned_health_data.csv` in the same folder.
-
-```bash
-pip install pandas numpy scikit-learn scipy
-jupyter notebook healthcare_data_cleansing_final.ipynb
-```
+## VIDEO LINK 
+https://drive.google.com/drive/folders/1gZ0AcxJzDPNmFp0b2yQxz4lAyrKAyXYA
 
 ---
 
-## 📌 Notes
-
-- All missing values and outliers in the raw dataset were **synthetically injected** to
-  simulate realistic healthcare reporting/measurement errors, for the purpose of this
-  data-cleaning exercise.
-- Suitable assumptions (imputation strategy, outlier thresholds) were made in line with
-  standard data-cleaning practice for healthcare datasets.
