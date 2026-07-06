@@ -123,7 +123,7 @@ extreme/erroneous records while keeping the rest of the distribution intact.
 ---
 
 ## VIDEO LINK 
-https://drive.google.com/file/d/1SGQ5Y3exTT04-SbIoMfaX1jDirs62IH0/view?usp=sharing
+https://drive.google.com/file/d/1aUQ4myLozaaLFQnNqQ3Xyb95rUwDhHVc/view?usp=sharing
 
 ---
 
